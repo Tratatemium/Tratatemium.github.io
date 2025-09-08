@@ -112,12 +112,81 @@
 /* #endregion */
 
 /* #region ========== BODY ========== */
+
+    html, body {
+    height: 100%;
+    margin: 0;
+    }
+
     body{
         background-color: var(--background-color);
         font-family: var(--main-font);
         color: var(--main-color);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-image: url(/images/top-pixelated.png);
+        background-size: 60%;
+
+        background-position: center top;   /* keep centered */
+        background-repeat:repeat-x;
+    }
+
+    .accent-color-1{
+        color: var(--accent-color-1);
+    }
+
+    .accent-color-2{
+        color: var(--accent-color-2);
+    }
+
+    .accent-color-3{
+        color: var(--accent-color-3);
     }
 /* #endregion */
+
+/* #region ========== NAVIGATION ========== */
+nav{
+    display: block;
+    width: fit-content;
+    margin: 5em auto;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 1.5em;
+}
+
+nav a:hover,
+nav a:focus{
+    color: var(--accent-color-1);
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+/* #endregion */
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+footer{
+    width: 100%;
+    height: 5rem;
+    background-color: #2d2d2d69;
+    align-self: flex-end;
+}
+
+section.my-photo{
+    border: #2D2D2D 3px solid;
+    border-radius: 50%;
+    display: block;
+    width: 15em;
+    height: 15em;
+    margin: auto;
+}
 
 /* #region ========== WORD CLOUD ========== */
 
@@ -137,6 +206,8 @@
         height: fit-content;    
         margin: 3rem 3rem;
 
+        margin: auto auto;
+
         gap: 0;
 
         transform: rotate(-45deg);
@@ -144,126 +215,124 @@
         
     }
 
-    .hello{
-        /* border: 1px green solid; */
+    /* #region ====INTRODUCTION==== */
+        .hello{
+            grid-area: hello;
+            display: inline-block;
+            width: fit-content;
+            height: fit-content;
+            margin: 0;
 
-        grid-area: hello;
-        display: inline-block;
-        width: fit-content;
-        height: fit-content;
-        margin: 0;
+            transform: rotate(90deg) translate(80%, 20%);
+            transform-origin: bottom right;
 
-        /* Rotate and position visually bottom-right */
-        transform: rotate(90deg) translate(80%, 20%);
-        transform-origin: bottom right;
+            font-size: 2.4em;
 
-        font-size: 2.4em;
-
-        animation: rotate-hello var(--animation-speed-rotation) var(--delay-rotation) var(--animation-function-rotate) backwards;
-    }
-
-    @keyframes rotate-hello{
-        from{
-            transform-origin: 100% 84%;
-            transform: rotate(45deg) translate(57%, 110%);
+            animation: rotate-hello var(--animation-speed-rotation) var(--delay-rotation) var(--animation-function-rotate) backwards;
         }
-    }
-    
-    .my-name{
-        /* border: 1px green solid; */
 
-        display: block;
-        grid-area: name;
-        width: fit-content;
-        height: fit-content;
-        margin: 0;
-
-        font-weight: bold;
-        font-size: 4em;
-        line-height: 1em; 
-
-        animation: rotate-name var(--animation-speed-rotation) var(--delay-rotation) var(--animation-function-rotate) backwards;
-    }
-    
-    @keyframes rotate-name{
-        from{
-            transform: rotate(45deg) translate(0%, 0%);
-            transform-origin: 60% 0%;
+        @keyframes rotate-hello{
+            from{
+                transform-origin: 100% 84%;
+                transform: rotate(45deg) translate(57%, 110%);
+            }
         }
-    }
+        
+        .my-name{
+            display: block;
+            grid-area: name;
+            width: fit-content;
+            height: fit-content;
+            margin: 0;
 
-    .my-name span{
-        display: block;
-        overflow: hidden;
-        white-space: nowrap;      
-    }
+            font-weight: bold;
+            font-size: 4em;
+            line-height: 1em; 
 
-     .my-name span:nth-child(2){
-        padding-left: 3.5ch;
-    }
+            animation: rotate-name var(--animation-speed-rotation) var(--delay-rotation) var(--animation-function-rotate) backwards;
+        }
+        
+        @keyframes rotate-name{
+            from{
+                transform: rotate(45deg) translate(0%, 0%);
+                transform-origin: 60% 0%;
+            }
+        }
 
+        .my-name span{
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;      
+        }
 
-    .occupation{
-        /* border: 1px green solid; */
+        .my-name span:nth-child(2){
+            padding-left: 3.5ch;
+        }
+    /* #endregion */
 
-        grid-area: occup;
-        width: 23ch;
-        height: fit-content;
-        justify-self: end;
-        align-self: end;
-        margin: 0;
+    /* #region ====OCCUPATION==== */
+        .occupation{
+            grid-area: occup;
+            width: 23ch;
+            height: fit-content;
+            justify-self: end;
+            align-self: end;
+            margin: 0;
 
-        transform: translate(8%, 0);
+            transform: translate(8%, 0);
 
-        font-weight: bold;
-        font-size: 2em;
-        line-height: 1em;
-        font-family: 'Fira Mono', monospace;
-    }
-    
+            font-weight: bold;
+            font-size: 2em;
+            line-height: 1em;
+            font-family: 'Fira Mono', monospace;
+        }    
 
-    .occupation span.line-1{
+        .occupation span.line-1{
 
-        display: block;
-        overflow: hidden;
-        white-space: nowrap;
-        animation: 
-            typing-line-1 calc(23 * var(--animation-speed-typewriter))  steps(23) var(--delay-typewriter) backwards,
-            caret-line-1 calc(23 * var(--animation-speed-typewriter))  steps(23) var(--delay-typewriter) backwards;
-    }
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: 
+                typing-line-1 calc(23 * var(--animation-speed-typewriter))  steps(23) var(--delay-typewriter) backwards,
+                caret-line-1 calc(23 * var(--animation-speed-typewriter))  steps(23) var(--delay-typewriter) backwards;
+        }
 
-    .occupation span.line-2{
+        .occupation span.line-2{
 
-        display: inline-block;
-        padding-right: 0;
-        overflow: hidden;
-        white-space: nowrap;
-        padding-left: 8ch;
-        animation: 
-            typing-line-2 calc(7 * var(--animation-speed-typewriter)) steps(7) calc(23 * var(--animation-speed-typewriter) + var(--delay-typewriter)) backwards,
-            caret-line-2 calc(7 * var(--animation-speed-typewriter)) steps(7) calc(23 * var(--animation-speed-typewriter) + var(--delay-typewriter)) backwards,
-            blinking-caret calc(7 * var(--animation-speed-typewriter)) steps(1, start) calc(30 * var(--animation-speed-typewriter) + var(--delay-typewriter)) infinite;
-    }
+            display: inline-block;
+            padding-right: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            padding-left: 8ch;
+            animation: 
+                typing-line-2 calc(7 * var(--animation-speed-typewriter)) steps(7) calc(23 * var(--animation-speed-typewriter) + var(--delay-typewriter)) backwards,
+                caret-line-2 calc(7 * var(--animation-speed-typewriter)) steps(7) calc(23 * var(--animation-speed-typewriter) + var(--delay-typewriter)) backwards,
+                blinking-caret calc(7 * var(--animation-speed-typewriter)) steps(1, start) calc(30 * var(--animation-speed-typewriter) + var(--delay-typewriter)) infinite;
+        }
 
-    @keyframes typing-line-1 { from { width: 0ch } to { width: 23ch } }
-    @keyframes caret-line-1 {
-        0% {border-right: var(--caret) transparent;}
-        1% {border-right: var(--caret) var(--main-color);}
-        13% {border-right: var(--caret) var(--accent-color-1);}
-        100% {border-right: var(--caret) var(--accent-color-1);}
-    }
-    @keyframes typing-line-2 { from { width: 8ch } to { width: 15ch } }
-    @keyframes caret-line-2 {
-        0% {border-right: var(--caret) transparent;}
-        1% {border-right: var(--caret) var(--main-color);}
-        100% {border-right: var(--caret) var(--main-color);}
-    }
-    @keyframes blinking-caret {
-        50% {border-right: var(--caret) var(--main-color);}
-    }
-    @media (prefers-reduced-motion: reduce) {
-        .typewriter { animation: none; border-right: none }
-    }
+        @keyframes typing-line-1 { from { width: 0ch } to { width: 23ch } }
+        @keyframes caret-line-1 {
+            0% {border-right: var(--caret) transparent;}
+            1% {border-right: var(--caret) var(--main-color);}
+            13% {border-right: var(--caret) var(--accent-color-1);}
+            100% {border-right: var(--caret) var(--accent-color-1);}
+        }
+
+        @keyframes typing-line-2 { from { width: 8ch } to { width: 15ch } }
+        @keyframes caret-line-2 {
+            0% {border-right: var(--caret) transparent;}
+            1% {border-right: var(--caret) var(--main-color);}
+            100% {border-right: var(--caret) var(--main-color);}
+        }
+
+        @keyframes blinking-caret {
+            50% {border-right: var(--caret) var(--main-color);}
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .typewriter { animation: none; border-right: none }
+        }
+    /* #endregion */
 
     .skills{
         /* border: 1px green solid; */
@@ -434,16 +503,6 @@
         }
     }
 
-    .accent-color-1{
-        color: var(--accent-color-1);
-    }
 
-    .accent-color-2{
-        color: var(--accent-color-2);
-    }
-
-    .accent-color-3{
-        color: var(--accent-color-3);
-    }
 
 /* #endregion */
