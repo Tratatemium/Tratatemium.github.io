@@ -125,9 +125,8 @@
         background-color: var(--background-color);
         font-family: var(--main-font);
         color: var(--main-color);
-        /* display: flex;
-        flex-direction: column;
-        min-height: 100vh; */
+        display: grid;
+        
         /* background-image: url(/images/top-pixelated.png);
         background-size: 60%;
 
@@ -208,13 +207,6 @@ section.my-photo{
 @keyframes photo-appear{
     from{ opacity: 0; }
 }
-/* .my-photo, 
-.word-cloud {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    justify-self: center;
-    align-self: center;
-} */
 
 .word-cloud{
     /* border: 1px red solid; */
@@ -536,6 +528,7 @@ footer{
     width: 100%;
     height: 5rem;
     background-color: #2d2d2d69;
-    align-self: flex-end;
-    margin-top: auto;
-    }
+
+    margin-top: 5rem;
+    margin-bottom: 0;
+}
