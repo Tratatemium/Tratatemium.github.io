@@ -92,6 +92,10 @@
         --accent-color-2: #188D82;
         --accent-color-3: #337F22;
 
+        --animation-speed: 0.3s;
+        --animation-function-skills: ease-out;
+        --delay-skills :0s;
+
     }
 /* #endregion */
 
@@ -124,7 +128,7 @@
         gap: 0;
 
         transform: rotate(-45deg);
-        font-size: 1rem;
+        font-size: .8rem;
         
     }
 
@@ -191,19 +195,11 @@
         transform-origin: bottom right;
 
         margin: 0;
-
     }
     .skills span {
         opacity: 0;
     }
 
-    :root{
-        --animation-speed: 0.3s;
-        --animation-function-skills: cubic-bezier(0.25, 1, 0.5, 1);
-        --animation-function-skills: ease-out;
-        --delay-skills :0s;
-
-    }
     
     /* #region ==== Skills Animation==== */
         .skills span:nth-child(1) { 
@@ -308,7 +304,6 @@
         font-size: 1em;
         line-height: 1em;
 
-        /* transform: rotate(90deg) translate(-50%, 750%); */
         opacity: 0;
         transform: rotate(90deg) translate(-160%, 750%); 
         transform-origin: top left;
@@ -355,15 +350,15 @@
         }
     }
 
-    .orange{
+    .accent-color-1{
         color: var(--accent-color-1);
     }
 
-    .teal{
+    .accent-color-2{
         color: var(--accent-color-2);
     }
 
-    .green{
+    .accent-color-3{
         color: var(--accent-color-3);
     }
 
