@@ -95,14 +95,16 @@
         --accent-color-2: #188D82;
         --accent-color-3: #337F22;
 
-        --animation-speed-skills: 0.3s;
-        --animation-function-skills: ease-out;
-        --delay-skills :0s;
-
         --animation-speed-typewriter: .12s;
         --delay-typewriter: 0.5s;
         --caret: 2px solid;
 
+        --animation-speed-skills: 0.3s;
+        --animation-function-skills: ease-out;
+        --delay-skills: calc(var(--delay-typewriter) + 30 * var(--animation-speed-typewriter));
+
+        /* --delay-hobbies: calc(1s+var(--delay-skills)); */
+        --delay-hobbies: calc(var(--delay-skills) + 8 * var(--animation-speed-skills));
     }
 /* #endregion */
 
@@ -375,7 +377,7 @@
         transform: rotate(90deg) translate(-160%, 850%); 
         transform-origin: top left;
         animation: hobbies-1-slide 1.5s forwards;
-        animation-delay: 2.2s;
+        animation-delay: var(--delay-hobbies);
     }
 
     @keyframes hobbies-1-slide {
@@ -404,7 +406,7 @@
         transform-origin: top left;  
         
         animation: hobbies-2-slide 1.5s forwards;
-        animation-delay: 2.2s;
+        animation-delay: var(--delay-hobbies);
 
     }
 
