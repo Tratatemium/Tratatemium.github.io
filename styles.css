@@ -125,11 +125,17 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        background-image: url(/images/top-pixelated.png);
+        /* background-image: url(/images/top-pixelated.png);
         background-size: 60%;
 
-        background-position: center top;   /* keep centered */
-        background-repeat:repeat-x;
+        background-position: center top; 
+        background-repeat:repeat-x; */
+
+        background-image: url(/images/rm378-08f.jpg);
+        background-size: 60%;
+
+        background-position: center top; 
+        background-repeat:repeat;
     }
 
     .accent-color-1{
@@ -170,6 +176,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
+    margin-bottom: 3em;
 }
 
 footer{
@@ -177,15 +184,19 @@ footer{
     height: 5rem;
     background-color: #2d2d2d69;
     align-self: flex-end;
+    margin-top: auto;
 }
 
 section.my-photo{
-    border: #2D2D2D 3px solid;
+    /* border: #2D2D2D 3px solid; */
     border-radius: 50%;
     display: block;
-    width: 15em;
-    height: 15em;
-    margin: auto;
+    width: 20em;
+    height: 20em;
+    margin-right: auto;
+    margin-left: 0;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* #region ========== WORD CLOUD ========== */
@@ -206,7 +217,9 @@ section.my-photo{
         height: fit-content;    
         margin: 3rem 3rem;
 
-        margin: auto auto;
+        margin-left: auto;
+        margin-right: 0;
+
 
         gap: 0;
 
