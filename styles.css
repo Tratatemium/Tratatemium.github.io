@@ -86,15 +86,22 @@
         --main-font:'Fira Sans', sans-serif;;
         --headline-font:'Fira Sans', sans-serif;;
 
+        /* --main-font:'Fira Mono', monospace;
+        --headline-font:'Fira Mono', monospace; */
+
         --background-color: #DFDFDF;
         --main-color: #2D2D2D;
         --accent-color-1: #FB531E;
         --accent-color-2: #188D82;
         --accent-color-3: #337F22;
 
-        --animation-speed: 0.3s;
+        --animation-speed-skills: 0.3s;
         --animation-function-skills: ease-out;
         --delay-skills :0s;
+
+        --animation-speed-typewriter: .12s;
+        --delay-typewriter: 0.5s;
+        --caret: 2px solid;
 
     }
 /* #endregion */
@@ -132,38 +139,6 @@
         
     }
 
-    p.my-name{
-        /* border: 1px green solid; */
-
-        grid-area: name;
-        width: fit-content;
-        height: fit-content;
-        margin: 0;
-
-        font-weight: bold;
-        font-size: 4em;
-        line-height: 1em;
-
-    }
-
-    .occupation{
-        /* border: 1px green solid; */
-
-        grid-area: occup;
-        width: fit-content;
-        height: fit-content;
-        justify-self: end;
-        align-self: end;
-        text-align: center;
-        margin: 0;
-
-        transform: translate(8%, 0);
-
-        font-weight: bold;
-        font-size: 2em;
-        line-height: 1em;
-    }
-
     .hello{
         /* border: 1px green solid; */
 
@@ -178,6 +153,98 @@
         transform-origin: bottom right;
 
         font-size: 2.4em;
+    }
+
+    .my-name{
+        /* border: 1px green solid; */
+
+        grid-area: name;
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+
+        font-weight: bold;
+        font-size: 4em;
+        line-height: 1em; 
+    }
+
+    .my-name span{
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;      
+    }
+
+     .my-name span:nth-child(2){
+        padding-left: 3.5ch;
+    }
+
+
+    .occupation{
+        /* border: 1px green solid; */
+
+        grid-area: occup;
+        width: 23ch;
+        height: fit-content;
+        justify-self: end;
+        align-self: end;
+        /* text-align: center; */
+        margin: 0;
+
+        transform: translate(8%, 0);
+
+        /* font-weight: bold;
+        font-size: 2em;
+        line-height: 1em; */
+
+        font-weight: bold;
+        font-size: 2em;
+        line-height: 1em;
+        font-family: 'Fira Mono', monospace;
+        /* letter-spacing: -0.04em;        */
+    }
+    
+
+    .occupation span.line-1{
+
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: 
+            typing-line-1 calc(23 * var(--animation-speed-typewriter))  steps(23) var(--delay-typewriter) backwards,
+            caret-line-1 calc(23 * var(--animation-speed-typewriter))  steps(23) var(--delay-typewriter) backwards;
+    }
+
+    .occupation span.line-2{
+
+        display: inline-block;
+        padding-right: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        padding-left: 8ch;
+        animation: 
+            typing-line-2 calc(7 * var(--animation-speed-typewriter)) steps(7) calc(23 * var(--animation-speed-typewriter) + var(--delay-typewriter)) backwards,
+            caret-line-2 calc(7 * var(--animation-speed-typewriter)) steps(7) calc(23 * var(--animation-speed-typewriter) + var(--delay-typewriter)) backwards,
+            blinking-caret calc(7 * var(--animation-speed-typewriter)) steps(1, start) calc(30 * var(--animation-speed-typewriter) + var(--delay-typewriter)) infinite;
+    }
+
+    @keyframes typing-line-1 { from { width: 0ch } to { width: 23ch } }
+    @keyframes caret-line-1 {
+        0% {border-right: var(--caret) transparent;}
+        1% {border-right: var(--caret) var(--main-color);}
+        13% {border-right: var(--caret) var(--accent-color-1);}
+        100% {border-right: var(--caret) var(--accent-color-1);}
+    }
+    @keyframes typing-line-2 { from { width: 8ch } to { width: 15ch } }
+    @keyframes caret-line-2 {
+        0% {border-right: var(--caret) transparent;}
+        1% {border-right: var(--caret) var(--main-color);}
+        100% {border-right: var(--caret) var(--main-color);}
+    }
+    @keyframes blinking-caret {
+        50% {border-right: var(--caret) var(--main-color);}
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .typewriter { animation: none; border-right: none }
     }
 
     .skills{
@@ -204,26 +271,26 @@
     /* #region ==== Skills Animation==== */
         .skills span:nth-child(1) { 
             animation-name: skills-appear;
-            animation-duration: calc(1 * var(--animation-speed));
+            animation-duration: calc(1 * var(--animation-speed-skills));
             animation-delay: var(--delay-skills);        
             animation-fill-mode: forwards;
         }
 
         .skills span:nth-child(2) { 
             animation-name: skills-appear;
-            animation-duration: calc(1 * var(--animation-speed));  
+            animation-duration: calc(1 * var(--animation-speed-skills));  
             animation-delay: 
-                calc(var(--delay-skills) + 6 * var(--animation-speed));              
+                calc(var(--delay-skills) + 6 * var(--animation-speed-skills));              
             animation-fill-mode: forwards;
         }
 
         .skills span:nth-child(2) { 
             transform: translateY(-1em);
             animation-name: skills-down, skills-appear;
-            animation-duration: calc(2 * var(--animation-speed)), calc(1 * var(--animation-speed));
+            animation-duration: calc(2 * var(--animation-speed-skills)), calc(1 * var(--animation-speed-skills));
             animation-delay: 
-                calc(var(--delay-skills) + 6 * var(--animation-speed)), 
-                calc(var(--delay-skills) + 6 * var(--animation-speed));
+                calc(var(--delay-skills) + 6 * var(--animation-speed-skills)), 
+                calc(var(--delay-skills) + 6 * var(--animation-speed-skills));
             animation-fill-mode: forwards, forwards;
             animation-timing-function: var(--animation-function-skills);    
         }
@@ -231,10 +298,10 @@
         .skills span:nth-child(3) { 
             transform: translateY(-2em);
             animation-name: skills-down, skills-appear;
-            animation-duration: calc(3 * var(--animation-speed)), calc(1 * var(--animation-speed));
+            animation-duration: calc(3 * var(--animation-speed-skills)), calc(1 * var(--animation-speed-skills));
             animation-delay: 
-                calc(var(--delay-skills) + 5 * var(--animation-speed)), 
-                calc(var(--delay-skills) + 5 * var(--animation-speed));
+                calc(var(--delay-skills) + 5 * var(--animation-speed-skills)), 
+                calc(var(--delay-skills) + 5 * var(--animation-speed-skills));
             animation-fill-mode: forwards, forwards;
             animation-timing-function: var(--animation-function-skills);    
         }
@@ -242,10 +309,10 @@
         .skills span:nth-child(4) { 
             transform: translateY(-3em);
             animation-name: skills-down, skills-appear;
-            animation-duration: calc(4 * var(--animation-speed)), calc(1 * var(--animation-speed));
+            animation-duration: calc(4 * var(--animation-speed-skills)), calc(1 * var(--animation-speed-skills));
             animation-delay: 
-                calc(var(--delay-skills) + 4 * var(--animation-speed)), 
-                calc(var(--delay-skills) + 4 * var(--animation-speed));
+                calc(var(--delay-skills) + 4 * var(--animation-speed-skills)), 
+                calc(var(--delay-skills) + 4 * var(--animation-speed-skills));
             animation-fill-mode: forwards, forwards;
             animation-timing-function: var(--animation-function-skills)    
         }
@@ -253,10 +320,10 @@
         .skills span:nth-child(5) { 
             transform: translateY(-4em);
             animation-name: skills-down, skills-appear;
-            animation-duration: calc(5 * var(--animation-speed)), calc(1 * var(--animation-speed));
+            animation-duration: calc(5 * var(--animation-speed-skills)), calc(1 * var(--animation-speed-skills));
             animation-delay: 
-                calc(var(--delay-skills) + 3 * var(--animation-speed)), 
-                calc(var(--delay-skills) + 3 * var(--animation-speed));
+                calc(var(--delay-skills) + 3 * var(--animation-speed-skills)), 
+                calc(var(--delay-skills) + 3 * var(--animation-speed-skills));
             animation-fill-mode: forwards, forwards; 
             animation-timing-function: var(--animation-function-skills)
         }
@@ -264,10 +331,10 @@
         .skills span:nth-child(6) { 
             transform: translateY(-5em);
             animation-name: skills-down, skills-appear;
-            animation-duration: calc(6 * var(--animation-speed)), calc(1 * var(--animation-speed));
+            animation-duration: calc(6 * var(--animation-speed-skills)), calc(1 * var(--animation-speed-skills));
             animation-delay: 
-                calc(var(--delay-skills) + 2 * var(--animation-speed)), 
-                calc(var(--delay-skills) + 2 * var(--animation-speed));
+                calc(var(--delay-skills) + 2 * var(--animation-speed-skills)), 
+                calc(var(--delay-skills) + 2 * var(--animation-speed-skills));
             animation-fill-mode: forwards, forwards;
             animation-timing-function: var(--animation-function-skills)    
         }
@@ -275,10 +342,10 @@
         .skills span:nth-child(7) { 
             transform: translateY(-6em);
             animation-name: skills-down, skills-appear;
-            animation-duration: calc(7 * var(--animation-speed)), calc(1 * var(--animation-speed));
+            animation-duration: calc(7 * var(--animation-speed-skills)), calc(1 * var(--animation-speed-skills));
             animation-delay: 
-                calc(var(--delay-skills) + 1 * var(--animation-speed)), 
-                calc(var(--delay-skills) + 1 * var(--animation-speed));
+                calc(var(--delay-skills) + 1 * var(--animation-speed-skills)), 
+                calc(var(--delay-skills) + 1 * var(--animation-speed-skills));
             animation-fill-mode: forwards, forwards;
             animation-timing-function: var(--animation-function-skills)    
         }
@@ -305,7 +372,7 @@
         line-height: 1em;
 
         opacity: 0;
-        transform: rotate(90deg) translate(-160%, 750%); 
+        transform: rotate(90deg) translate(-160%, 850%); 
         transform-origin: top left;
         animation: hobbies-1-slide 1.5s forwards;
         animation-delay: 2.2s;
@@ -313,12 +380,10 @@
 
     @keyframes hobbies-1-slide {
         to {
-            transform: rotate(90deg) translate(-50%, 750%);  
+            transform: rotate(90deg) translate(-50%, 850%);  
             opacity: 1;                  
         }
-    }
-
-    
+    }    
 
     .hobbies-2{
         /* border: 1px green solid; */
@@ -335,7 +400,7 @@
 
         /* transform: rotate(90deg) translate(-80%, -230%); */
         opacity: 0;
-        transform: rotate(90deg) translate(-180%, -230%);
+        transform: rotate(90deg) translate(-180%, -200%);
         transform-origin: top left;  
         
         animation: hobbies-2-slide 1.5s forwards;
@@ -345,7 +410,7 @@
 
     @keyframes hobbies-2-slide {
         to {
-            transform: rotate(90deg) translate(-80%, -230%); 
+            transform: rotate(90deg) translate(-80%, -200%); 
             opacity: 1;                  
         }
     }
