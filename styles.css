@@ -83,8 +83,8 @@
 /* #region ========== VARIABLES ========== */
     :root{
 
-        --main-font:'Fira Sans', sans-serif;;
-        --headline-font:'Fira Sans', sans-serif;;
+        --main-font:'Fira Sans', sans-serif;
+        --headline-font:'Fira Sans', sans-serif;
 
         /* --main-font:'Fira Mono', monospace;
         --headline-font:'Fira Mono', monospace; */
@@ -95,8 +95,10 @@
         --accent-color-2: #188D82;
         --accent-color-3: #337F22;
 
+        --curtain-center-distance: 5em;
+
         --animation-speed-curtain: .9s;
-        --delay-curtain: 3s;
+        --delay-curtain: 2s;
 
         --animation-speed-rotation: .9s;
         --delay-rotation: calc(var(--delay-curtain) + var(--animation-speed-curtain) + 0.5s);
@@ -127,12 +129,6 @@
         color: var(--main-color);
         display: grid;
         
-        /* background-image: url(/images/top-pixelated.png);
-        background-size: 60%;
-
-        background-position: center top; 
-        background-repeat:repeat-x; */
-
         background-image: url(/images/rm378-08f.jpg);
         background-size: 70%;
 
@@ -151,44 +147,63 @@
     .accent-color-3{
         color: var(--accent-color-3);
     }
+
+    a{
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: var(--accent-color-1);
+    }
 /* #endregion */
 
-/* #region ========== NAVIGATION ========== */
-nav{
-    display: block;
-    width: fit-content;
-    margin: 5em auto;
-}
 
-nav a{
-    text-decoration: none;
-    color: var(--main-color);
-    font-size: 1.5em;
-}
-
-nav a:hover,
-nav a:focus{
-    color: var(--accent-color-1);
-    font-size: 1.5em;
-    font-weight: bolder;
-}
-/* #endregion */
 
 main{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     margin-bottom: 3em;
+    margin-top: 3em;
 }
 
+/* #region ========== NAVIGATION ========== */
+nav{
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    transform: translateX(calc(-1 * var(--curtain-center-distance)));
+    width: fit-content;
+    margin: auto;
+    margin-top: 0;
+
+    gap: .9em;
+}
+
+nav a{
+    color: var(--main-color);
+    font-size: 1em;
+    transition: transform 0.2s, fill 0.2s;
+}
+
+nav a:hover,
+nav a:focus{
+    font-weight: bolder;
+    /* transform: scale(1.1); */
+}
+/* #endregion */
 
 section.my-photo{
     /* border: #2D2D2D 3px solid; */
+
+    grid-row: 2;
+    grid-column: 2;
     display: flex;
     width: 20em;
     height: 20em;
     margin: auto;
-
     place-items: center;
+    transform: translateX(calc(-1 * var(--curtain-center-distance)));
 
     animation: 
         curtain-right var(--animation-speed-curtain) var(--delay-curtain) backwards,
@@ -197,7 +212,7 @@ section.my-photo{
 
 @keyframes curtain-left {
     from { transform:  translate(25vw, 0) rotate(-45deg); }
-    to { transform:  translate(0, 0) rotate(-45deg); }
+    to { transform:  translate(var(--curtain-center-distance), 0) rotate(-45deg); }
 }
 
 @keyframes curtain-right {
@@ -210,6 +225,9 @@ section.my-photo{
 
 .word-cloud{
     /* border: 1px red solid; */
+
+    grid-row: 1 / -1;
+    grid-column: 1;
 
     display: inline-grid;   
     grid-template-columns: auto auto;
@@ -225,15 +243,14 @@ section.my-photo{
     margin: 3rem 3rem;
 
     margin: auto;
-
     gap: 0;
 
-    transform: rotate(-45deg);
-    font-size: 1rem;
+    transform: translateX(var(--curtain-center-distance)) rotate(-45deg);
+    font-size: 1.2rem;
     
     animation: curtain-left var(--animation-speed-curtain) var(--delay-curtain) backwards;
 }
-    /* #region ========== WORD CLOUD ========== */
+/* #region ========== WORD CLOUD ========== */
 
     /* #region ====INTRODUCTION==== */
         .hello{
@@ -525,10 +542,33 @@ section.my-photo{
 /* #endregion */
 
 footer{
+    display: flex;
     width: 100%;
     height: 5rem;
     background-color: #2d2d2d69;
 
     margin-top: 5rem;
     margin-bottom: 0;
+    align-items: center;    
+
+}
+
+.social {
+    display: flex;
+    width: fit-content;
+    gap: 1.5em;
+    align-items: center;
+    margin: auto;
+}
+
+footer svg{
+    display: block;
+    fill: var(--main-color);
+    width: 2em;
+    transition: transform 0.2s, fill 0.2s;
+}
+
+footer svg:hover{
+    fill: var(--accent-color-2);
+    transform: scale(1.2);
 }
