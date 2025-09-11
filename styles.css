@@ -131,7 +131,7 @@
         color: var(--main-color);
         display: grid;
         
-        background-image: url(images/rm378-08f.jpg);
+        background-image: url(images/background.png);
         background-size: 70%;
 
         background-position: center top; 
@@ -170,30 +170,27 @@ main{
 }
 
 /* #region ========== NAVIGATION ========== */
-nav{
-    grid-row: 1;
-    grid-column: 2;
-    display: flex;
-    transform: translateX(calc(-1 * var(--curtain-center-distance)));
-    width: fit-content;
-    margin: auto;
-    margin-top: 0;
+    nav{
+        grid-row: 1;
+        grid-column: 2;
+        display: flex;
+        transform: translateX(calc(-1 * var(--curtain-center-distance)));
+        width: 100;
+        justify-content: center;
+        gap: .9em;
+    }
 
-    gap: .9em;
-}
+    nav a{
+        color: var(--main-color);
+        font-size: 1em;
+    }
 
-nav a{
-    color: var(--main-color);
-    font-size: 1em;
-    transition: transform 0.2s, fill 0.2s;
-}
+    nav a:hover,
+    nav a:focus{
+        font-weight: bolder;
 
-nav a:hover,
-nav a:focus{
-    font-weight: bolder;
-    /* transform: scale(1.1); */
-}
-/* #endregion */
+    }
+/* #endregion NAVIGATION */
 
 section.my-photo{
     grid-row: 2;
