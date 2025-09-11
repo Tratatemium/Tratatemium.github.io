@@ -575,9 +575,9 @@ footer svg:hover{
 }
 
 p.copyright{
-    font-size: 0.5em;
+    font-size: 0.8em;
     grid-column: 3;
-    margin: auto 1em 0.3em auto;
+    margin: auto 1.5em 0.4em auto;
 }
 /* #endregion FOOTER */
 
@@ -624,12 +624,33 @@ h1{
 
 div.my-hobbies,
 div.my-projects{
-    display: flex;
-    flex-direction: column;
+    grid-row: 2;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-auto-rows: auto;
     align-items: center;
+    justify-content: center;
     margin-top: 5em;
     margin-bottom: 5em;
-    gap: 5em;
+    gap: 14em;
+}
+
+.hobby,
+.project{
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 3em;
+}
+
+.hobby h2,
+.project h2{
+    /* margin: auto 0 auto auto; */
+}
+
+.hobby p,
+.project p {
+    width: 80ch;
+    margin: auto;
 }
 
 /* #region ========== MY HOBBIES ========== */
