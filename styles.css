@@ -180,6 +180,9 @@ main{
         width: 100;
         justify-content: center;
         gap: .9em;
+
+        position: relative;
+        z-index: 2;
     }
 
     nav a{
