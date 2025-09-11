@@ -113,6 +113,8 @@
         --delay-skills: calc(var(--delay-typewriter) + 30 * var(--animation-speed-typewriter));
 
         --delay-hobbies: calc(var(--delay-skills) + 8 * var(--animation-speed-skills));
+
+        --delay-about-me: 0.3s;
     }
 /* #endregion */
 
@@ -194,8 +196,6 @@ nav a:focus{
 /* #endregion */
 
 section.my-photo{
-    /* border: #2D2D2D 3px solid; */
-
     grid-row: 2;
     grid-column: 2;
     display: flex;
@@ -369,11 +369,9 @@ section.my-photo{
         @media (prefers-reduced-motion: reduce) {
             .typewriter { animation: none; border-right: none }
         }
-    /* #endregion */
+    /* #endregion OCCUPATION*/
 
     .skills{
-        /* border: 1px green solid; */
-
         grid-area: skills;
         display: grid;
         width: fit-content;
@@ -387,6 +385,7 @@ section.my-photo{
 
         margin: 0;
     }
+
     .skills span {
         opacity: 0;
     }
@@ -481,7 +480,7 @@ section.my-photo{
             to { opacity: 1; }
         }
 
-    /* #endregion */
+    /* #endregion Skills Animation*/
 
     .hobbies-1{
         /* border: 1px green solid; */
@@ -541,6 +540,8 @@ section.my-photo{
     }
 /* #endregion */
 
+
+/* #region ========== FOOTER ========== */
 footer{
     display: flex;
     flex-direction: row;
@@ -575,7 +576,50 @@ footer svg:hover{
 
 footer p{
     font-size: 0.5em;
-    margin-bottom: .5em;
     position: absolute;
     right: 1.5em;
+    bottom: 0.5em;
+}
+/* #endregion FOOTER */
+
+
+h1{
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    font-size: 3em;
+}
+
+
+
+/* #region ========== ABOUT ME ========== */
+
+main.about-me{
+    height: 100%;
+    align-items: center;
+}
+
+
+.my-photo.about-me{
+    grid-row: 2;
+    grid-column: 1;
+    transform: translateX(var(--curtain-center-distance));
+    animation: 
+        curtain-left-normal var(--animation-speed-curtain) var(--delay-about-me) backwards,
+        photo-appear var(--animation-speed-curtain) var(--delay-about-me) backwards;
+}
+@keyframes curtain-left-normal {
+    from { transform:  translate(25vw, 0);}
+    to { transform:  translate(var(--curtain-center-distance));}
+}
+
+.text.about-me{
+    grid-row: 2;
+    grid-column: 2;
+    padding: 8em;
+
+    transform: translateX(calc(-1 * var(--curtain-center-distance)));
+    animation: 
+        curtain-right var(--animation-speed-curtain) var(--delay-about-me) backwards,
+        photo-appear var(--animation-speed-curtain) var(--delay-about-me) backwards;
 }
