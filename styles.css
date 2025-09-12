@@ -1,9 +1,17 @@
-    * {
+    /* * {
         animation-duration: 0s !important;
         animation-delay: 0s !important;
         transition-duration: 0s !important;
         transition-delay: 0s !important;
-    }
+    } */
+
+    /* Disable all animations and transitions */
+    /* *,
+    *::before,
+    *::after {
+    animation: none !important;
+    transition: none !important;
+    } */
 
 /* #region ========== CSS RESET ========== */
 
@@ -126,7 +134,7 @@
 /* #region ========== BODY ========== */
 
     html {
-        /* font-size: clamp(.4rem, 0.4rem + 0.5vw, 1rem); */
+        font-size: clamp(.4rem, 0.5rem + 0.5vw, 2rem);
     }
 
     html, body {
@@ -174,14 +182,18 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
+    grid-template-areas: 
+        "cloud nav"
+        "cloud img";
     margin-bottom: auto;
     margin-top: 2em;
 }
 
 /* #region ========== NAVIGATION ========== */
     nav{
-        grid-row: 1;
-        grid-column: 2;
+        /* grid-row: 1;
+        grid-column: 2; */
+        grid-area: nav;
         display: flex;
         transform: translateX(calc(-1 * var(--curtain-center-distance)));
         width: 100%;
@@ -205,8 +217,7 @@ main{
 /* #endregion NAVIGATION */
 
 section.my-photo{
-    grid-row: 2;
-    grid-column: 2;
+    grid-area: img;
     display: flex;
     width: 20em;
     height: 20em;
@@ -235,8 +246,7 @@ section.my-photo{
 .word-cloud{
     /* border: 1px red solid; */
 
-    grid-row: 1 / -1;
-    grid-column: 1;
+    grid-area: cloud;
 
     display: grid;   
     grid-template-columns: auto auto;
@@ -250,7 +260,7 @@ section.my-photo{
     width: fit-content;     
     height: fit-content;    
 
-    margin: 3em;
+    margin: 2em;
 
     gap: 0;
 
@@ -697,3 +707,59 @@ div.my-projects{
     } 
 
 /* #endregion MY PROJECTS */
+
+
+
+@media(max-width: 1100px){
+    main {
+        grid-template-rows: 10em auto;
+        grid-template-areas: 
+            "img nav"
+            "cloud cloud";
+        gap: 0.5em;
+        margin-bottom: 4em;        
+    }
+
+    .word-cloud{
+        /* background-color: #fb521e3c; */
+        justify-self: center;
+        transform:rotate(-45deg);
+
+    }
+
+    .my-photo{
+        /* background-color: #fb521e3c; */
+        display: inline-block;       
+        justify-self: center;
+        justify-content: center;
+        width: auto;
+        height: auto;
+        transform-origin: center;
+ 
+    }
+    :root {
+        --delay-rotation: var(--delay-curtain);
+    }
+    
+    .my-photo img{
+        width: 15em;
+        height: 15em;
+    }
+
+    @keyframes curtain-left {
+
+    }
+
+    @keyframes curtain-right {
+    }
+
+    @keyframes photo-appear{
+        from{ transform: translate(-25%, 0) scale(0.5); opacity: 0; }
+    }
+
+    
+}
+
+@media(max-width: 600px){
+    
+}
