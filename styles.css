@@ -755,6 +755,11 @@ div.my-projects{
         from{ transform: translate(0, 0) scale(0.5); opacity: 0; }
     }
 
+    .hobbies-1 span,
+    .hobbies-2 span{
+        opacity: 1;
+    }
+
     
 }
 
@@ -829,9 +834,18 @@ div.my-projects{
         transform: translate(-8%, -20%);
     }
 
+    .skills{
+        opacity: 0;
+    }
+
     @keyframes skills-down { }
 
     @keyframes skills-appear { }
+
+    .hobbies-1 span,
+    .hobbies-2 span{
+        opacity: 0;
+    }
 
     @keyframes hobbies-1-slide { }    
 
