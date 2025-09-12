@@ -134,7 +134,7 @@
 /* #region ========== BODY ========== */
 
     html {
-        font-size: clamp(.4rem, 0.5rem + 0.5vw, 2rem);
+        font-size: clamp(.2rem, 0.5rem + 0.5vw, 2rem);
     }
 
     html, body {
@@ -191,8 +191,6 @@ main{
 
 /* #region ========== NAVIGATION ========== */
     nav{
-        /* grid-row: 1;
-        grid-column: 2; */
         grid-area: nav;
         display: flex;
         transform: translateX(calc(-1 * var(--curtain-center-distance)));
@@ -216,7 +214,7 @@ main{
     }
 /* #endregion NAVIGATION */
 
-section.my-photo{
+.my-photo{
     grid-area: img;
     display: flex;
     width: 20em;
@@ -720,6 +718,11 @@ div.my-projects{
 
 
 @media(max-width: 1100px){
+
+    :root {
+        --delay-rotation: var(--delay-curtain);
+    }
+
     main {
         grid-template-rows: 10em auto;
         grid-template-areas: 
@@ -730,45 +733,138 @@ div.my-projects{
     }
 
     .word-cloud{
-        /* background-color: #fb521e3c; */
         justify-self: center;
         transform:rotate(-45deg);
 
     }
 
     .my-photo{
-        /* background-color: #fb521e3c; */
-        display: inline-block;       
-        justify-self: center;
-        justify-content: center;
-        width: auto;
-        height: auto;
-        transform-origin: center;
- 
-    }
-    :root {
-        --delay-rotation: var(--delay-curtain);
+        transform: none;
     }
     
     .my-photo img{
-        width: 15em;
-        height: 15em;
+        width: 16em;
+        height: 16em;
     }
 
-    @keyframes curtain-left {
+    @keyframes curtain-left { }
 
-    }
-
-    @keyframes curtain-right {
-    }
+    @keyframes curtain-right { }
 
     @keyframes photo-appear{
-        from{ transform: translate(-25%, 0) scale(0.5); opacity: 0; }
+        from{ transform: translate(0, 0) scale(0.5); opacity: 0; }
     }
 
     
 }
 
 @media(max-width: 600px){
+    html {
+        font-size: clamp(.4rem, 0.4rem + 0.5vw, 2rem);
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2em;
+    }
+
+    nav{
+        order: 1;
+        justify-content: center;
+        transform: none;
+        font-size: 1.3em;
+        margin-top: 2em;        
+    }
+
+    .word-cloud{
+        order: 3;
+        justify-self: center;
+        margin: auto;
+        transform: none;
+        animation: curtain-down var(--animation-speed-curtain) 0.3s backwards,
+        photo-appear var(--animation-speed-curtain) 0.3s backwards;
+    }
+
+    .my-photo{
+        order: 2;        
+        margin: auto;
+        margin-top: 3em;
+        transform: none;
+        animation: curtain-up var(--animation-speed-curtain) 0.3s backwards,
+        photo-appear var(--animation-speed-curtain) 0.3s backwards; 
+    }
+
+
+    @keyframes curtain-down {
+        from {transform: translateY(-50%);}
+    }
+
+    @keyframes curtain-up {
+        from {transform: translateY(50%);}
+    }
+
+    @keyframes photo-appear{
+        from{opacity: 0;}
+    }
+
+    .my-photo img{
+        width: 20em;
+        height: 20em;
+    }
+
+    .hello{
+        transform:  translate(-40%, 80%);
+    }
+
+    @keyframes rotate-hello { }
+
+    .my-name{
+        transform: translate(0%, -20%);
+    }
+
+    @keyframes rotate-name { }
+
+    .occupation{
+        transform: translate(-8%, -20%);
+    }
+
+    @keyframes skills-down { }
+
+    @keyframes skills-appear { }
+
+    @keyframes hobbies-1-slide { }    
+
+    @keyframes hobbies-2-slide { }
+
+    footer{
+        display: inline-grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+
+        margin-top: auto;
+        margin-bottom: 0;
+        gap: 0;
+        width: 100%;
+        height: fit-content;  
+    }
+
+    .social {
+        gap: 2.3em;
+        grid-column: 1;
+        grid-row: 1;
+        margin: 3em auto 1em auto;
+    }
+
+    .social svg{
+        width: 3.7em;
+    }
+
     
+    p.copyright{
+        font-size: 1.2em;
+        grid-column: 1;
+        grid-row: 2;
+        margin: 0.4em auto 0.4em auto;
+    }
 }
