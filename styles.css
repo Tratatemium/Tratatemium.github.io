@@ -624,10 +624,10 @@ h1{
         grid-column: 1;
         transform: translateX(var(--curtain-center-distance));
         animation: 
-            curtain-left-normal var(--animation-speed-curtain) var(--delay-about-me) backwards,
-            photo-appear var(--animation-speed-curtain) var(--delay-about-me) backwards;
+            curtain-left-about var(--animation-speed-curtain) var(--delay-about-me) backwards,
+            appear-about var(--animation-speed-curtain) var(--delay-about-me) backwards;
     }
-    @keyframes curtain-left-normal {
+    @keyframes curtain-left-about {
         from { transform:  translate(25vw, 0);}
         to { transform:  translate(var(--curtain-center-distance));}
     }
@@ -639,9 +639,18 @@ h1{
 
         transform: translateX(calc(-1 * var(--curtain-center-distance)));
         animation: 
-            curtain-right var(--animation-speed-curtain) var(--delay-about-me) backwards,
-            photo-appear var(--animation-speed-curtain) var(--delay-about-me) backwards;
-}
+            curtain-right-about var(--animation-speed-curtain) var(--delay-about-me) backwards,
+            appear-about var(--animation-speed-curtain) var(--delay-about-me) backwards;
+    }
+    @keyframes curtain-right-about {
+        from { transform:  translateX(-25vw);}
+        to { transform:  translate(calc(-1 * var(--curtain-center-distance)));}
+    }
+
+    @keyframes appear-about{
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
 /* #endregion ABOUT ME */
 
 div.my-hobbies,
