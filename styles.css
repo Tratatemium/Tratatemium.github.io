@@ -1,6 +1,9 @@
-/* #region ========== + ========== */
-
-/* #endregion */
+    * {
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
 
 /* #region ========== CSS RESET ========== */
 
@@ -86,6 +89,8 @@
         --main-font:'Fira Sans', sans-serif;
         --headline-font:'Fira Sans', sans-serif;
 
+        
+
         /* --main-font:'Fira Mono', monospace;
         --headline-font:'Fira Mono', monospace; */
 
@@ -119,6 +124,10 @@
 /* #endregion */
 
 /* #region ========== BODY ========== */
+
+    html {
+        /* font-size: clamp(.4rem, 0.4rem + 0.5vw, 1rem); */
+    }
 
     html, body {
     height: 100%;
@@ -167,8 +176,6 @@ main{
     grid-template-rows: auto auto;
     margin-bottom: auto;
     margin-top: 2em;
-
-    
 }
 
 /* #region ========== NAVIGATION ========== */
@@ -177,7 +184,7 @@ main{
         grid-column: 2;
         display: flex;
         transform: translateX(calc(-1 * var(--curtain-center-distance)));
-        width: 100;
+        width: 100%;
         justify-content: center;
         gap: .9em;
 
@@ -231,20 +238,20 @@ section.my-photo{
     grid-row: 1 / -1;
     grid-column: 1;
 
-    display: inline-grid;   
+    display: grid;   
     grid-template-columns: auto auto;
     grid-template-rows: repeat(4, auto);
     grid-template-areas:
         "skills hello"
         "name name"
         "occup occup"
-        "hobbies-2 hobbies-2";
+        "hobbies-2 hobbies-1";
 
     width: fit-content;     
     height: fit-content;    
-    margin: 3rem 3rem;
 
-    margin: auto;
+    margin: 3em;
+
     gap: 0;
 
     transform: translateX(var(--curtain-center-distance)) rotate(-45deg);
@@ -492,21 +499,23 @@ section.my-photo{
         display: inline-block;
         width: fit-content;
         height: fit-content;
-        margin: 0 0;
+        margin: 0 0;     
 
         font-size: 1em;
         line-height: 1em;
 
         opacity: 0;
-        transform: rotate(90deg) translate(-160%, 850%); 
+        transform: rotate(90deg) translate(-100%, 150%); 
         transform-origin: top left;
         animation: hobbies-1-slide 1.5s forwards;
         animation-delay: var(--delay-hobbies);
     }
 
+
+
     @keyframes hobbies-1-slide {
         to {
-            transform: rotate(90deg) translate(-50%, 850%);  
+            transform: rotate(90deg) translate(0%, 150%);  
             opacity: 1;                  
         }
     }    
@@ -643,6 +652,19 @@ div.my-projects{
     display: grid;
     grid-auto-rows: auto;
     gap: 3em;
+
+    opacity: 0;
+    transform: translatex(4em);
+    animation: fade-in-p 1s forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes fade-in-p{
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hobby h2,
@@ -655,6 +677,8 @@ div.my-projects{
     width: 80ch;
     margin: auto;
 }
+
+
 
 /* #region ========== MY HOBBIES ========== */
 
