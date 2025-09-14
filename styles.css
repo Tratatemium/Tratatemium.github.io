@@ -246,8 +246,8 @@
         transform: translateX(calc(-1 * var(--curtain-center-distance)));
 
         animation: 
-            curtain-right var(--animation-speed-curtain) var(--delay-curtain) backwards,
-            photo-appear var(--animation-speed-curtain) var(--delay-curtain) backwards;
+            curtain-photo var(--animation-speed-curtain) var(--delay-curtain) backwards,
+            element-appear var(--animation-speed-curtain) var(--delay-curtain) backwards;
     }
 
     .index img{
@@ -276,19 +276,19 @@
         transform: translateX(var(--curtain-center-distance)) rotate(-45deg);
         font-size: 1.2rem;
         
-        animation: curtain-left var(--animation-speed-curtain) var(--delay-curtain) backwards;
+        animation: curtain-cloud var(--animation-speed-curtain) var(--delay-curtain) backwards;
     }
 
-    @keyframes curtain-left {
+    @keyframes curtain-cloud {
         from { transform:  translate(25vw, 0) rotate(-45deg); }
         to { transform:  translate(var(--curtain-center-distance), 0) rotate(-45deg); }
     }
 
-    @keyframes curtain-right {
+    @keyframes curtain-photo {
         from { transform: translate(-25vw, 0); }
     }
 
-    @keyframes photo-appear{
+    @keyframes element-appear{
         from{ opacity: 0; }
     }
 
@@ -672,10 +672,10 @@
         grid-column: 1;
         transform: translateX(var(--curtain-center-distance));
         animation: 
-            curtain-left-about var(--animation-speed-curtain) var(--delay-about-me) backwards,
+            curtain-cloud-about var(--animation-speed-curtain) var(--delay-about-me) backwards,
             appear-about var(--animation-speed-curtain) var(--delay-about-me) backwards;
     }
-    @keyframes curtain-left-about {
+    @keyframes curtain-cloud-about {
         from { transform:  translate(25vw, 0);}
         to { transform:  translate(var(--curtain-center-distance));}
     }
@@ -686,7 +686,7 @@
         padding: 8em;
         transform: translateX(calc(-1 * var(--curtain-center-distance)));
         animation: 
-            curtain-right-about var(--animation-speed-curtain) var(--delay-about-me) backwards,
+            curtain-photo-about var(--animation-speed-curtain) var(--delay-about-me) backwards,
             appear-about var(--animation-speed-curtain) var(--delay-about-me) backwards;
     }
 
@@ -694,7 +694,7 @@
         margin-top: 0.6em;
     }
 
-    @keyframes curtain-right-about {
+    @keyframes curtain-photo-about {
         from { transform:  translateX(-25vw);}
         to { transform:  translate(calc(-1 * var(--curtain-center-distance)));}
     }
@@ -809,11 +809,11 @@
         height: 16em;
     }
 
-    @keyframes curtain-left { }
+    @keyframes curtain-cloud { }
 
-    @keyframes curtain-right { }
+    @keyframes curtain-photo { }
 
-    @keyframes photo-appear{
+    @keyframes element-appear{
         from{ transform: translate(0, 0) scale(0.5); opacity: 0; }
     }
 
@@ -848,7 +848,7 @@
         transform: translateY(-40%);
     }
 
-    @keyframes curtain-left-about {
+    @keyframes curtain-cloud-about {
         from { transform:  translateY(-40%) scale(0.7);}
         to { transform:  translateY(-40%) scale(1);}
     }
@@ -860,7 +860,7 @@
         transform: translateX(0);
     }
 
-    @keyframes curtain-right-about {
+    @keyframes curtain-photo-about {
         from { transform:  translateX(0) scale(0.8);}
         to { transform:  translateX(0) scale(1);}
     } 
@@ -917,8 +917,6 @@
         justify-self: center;
         margin: auto;
         transform: none;
-        animation: curtain-down var(--animation-speed-curtain) 0.3s backwards,
-        photo-appear var(--animation-speed-curtain) 0.3s backwards;
     }
 
     .my-photo{
@@ -926,21 +924,19 @@
         margin: auto;
         margin-top: 3em;
         transform: none;
-        animation: curtain-up var(--animation-speed-curtain) 0.3s backwards,
-        photo-appear var(--animation-speed-curtain) 0.3s backwards; 
     }
 
-
-    @keyframes curtain-down {
-        from {transform: translateY(-50%);}
+    @keyframes curtain-cloud {
+        from { transform: translateY(-50%); }
+        to { transform:  none }
     }
 
-    @keyframes curtain-up {
-        from {transform: translateY(50%);}
+    @keyframes curtain-photo {
+        from { transform: translateY(50%); }
     }
 
-    @keyframes photo-appear{
-        from{opacity: 0;}
+    @keyframes element-appear{
+        from{ opacity: 0; }
     }
 
     .my-photo img{
@@ -1025,7 +1021,7 @@
         order: 3;
     }
 
-    @keyframes curtain-left-about {
+    @keyframes curtain-cloud-about {
         from { transform:  translateY(0) scale(0.7);}
         to { transform:  translateY(0) scale(1);}
     }
