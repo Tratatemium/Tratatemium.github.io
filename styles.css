@@ -99,6 +99,12 @@
         --accent-color-2: #188D82;
         --accent-color-3: #337F22;
 
+        --background-color: #0a0a0a;
+        --main-color: #eeeeee;
+        --accent-color-1: #FF5F1F;
+        --accent-color-2: #1BF0D7;
+        --accent-color-3: #39FF3F;
+
         --curtain-center-distance: 5em;
 
         --animation-speed-curtain: .9s;
@@ -147,7 +153,8 @@
         color: var(--main-color);
         display: grid;
         
-        background-image: url(images/background.png);
+        /* background-image: url(images/background.png); */
+        background-image: url(images/background-night.png);
         background-size: 70%;
 
         background-position: center top; 
