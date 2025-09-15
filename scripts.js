@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -29,6 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function showImage(index) {
     lightbox.style.display = "flex";
     lightboxImg.src = currentImages[index].src;
+
+    const captionText = currentImages[index].getAttribute("data-caption") 
+                    || currentImages[index].alt 
+                    || "";
+    document.getElementById("lightbox-caption").textContent = captionText;
+
     currentIndex = index;
   }
 

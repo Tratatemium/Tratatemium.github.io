@@ -729,6 +729,11 @@
         gap: 14em;
     }
 
+    .hobby h2 {
+
+        
+    }
+
     .hobby,
     .project{
         display: grid;
@@ -750,6 +755,15 @@
         width: 80ch;
         margin: auto;
     }
+
+    a.wiki-link{
+        text-decoration:underline;
+        color: var(--main-color);
+    }
+    a.wiki-link:hover,
+    a.wiki-link:focus{
+        color: var(--accent-color-1);
+    }
     
     .hobby.img{
         display: flex;
@@ -758,7 +772,7 @@
         align-items: center;
         gap: 1.5em;
         margin: 1em auto;
-        max-width: 100%;
+        max-width: 70%;
     }
 
     .hobby.img img{
@@ -777,56 +791,89 @@
         cursor: pointer;
     }
 
-    .lightbox{
-        display: none;
-        position: fixed;
-        z-index: 999;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(0,0,0,0.9);
-        justify-content: center;
-        align-items: center;
-    }
-
-    .lightbox-img {
-        max-width: 90%;
-        max-height: 80%;
-        border-radius: 0.5em;
-    }
-
-    .lightbox .close {
-        position: absolute;
-        top: 0px; right: 0px;
-        color: white;
-        font-size: 3em;
-        width: 1.5em; height: 1.5em;
+    .project-separator {
         text-align: center;
-        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--accent-color-3);
+        margin: 0.5;
+        letter-spacing: 0.5rem;
     }
 
-    .lightbox .prev,
-    .lightbox .next{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
-        color: white;
-        font-size: 3em;
-        width: 2em; height: 2em;
-        text-shadow: 0 0 3px black;
-        border: none;
-        cursor: pointer;
-        user-select: none;
-    }
+    /* #region ========== LIGHTBOX ========== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
 
-    .lightbox .prev {left: 20px;}
-    .lightbox .next {right: 20px;}
+        .lightbox-content {
+            position: relative;
+            display: inline-block;
+        }
 
-    .lightbox .prev:hover,
-    .lightbox .next:hover,
-    .lightbox .close:hover{
-        color: var(--accent-color-1);
-    }
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 80vh;
+            display: block;
+            border-radius: 0.5em;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            padding: 0.5em 0;
+            font-size: 1em;
+            border-bottom-left-radius: 0.5em;
+            border-bottom-right-radius: 0.5em;
+            box-sizing: border-box;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 0px; right: 0px;
+            color: white;
+            font-size: 3em;
+            width: 1.5em; height: 1.5em;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .lightbox .prev,
+        .lightbox .next{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            color: white;
+            font-size: 3em;
+            width: 2em; height: 2em;
+            text-shadow: 0 0 3px black;
+            border: none;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .lightbox .prev {left: 20px;}
+        .lightbox .next {right: 20px;}
+
+        .lightbox .prev:hover,
+        .lightbox .next:hover,
+        .lightbox .close:hover{
+            color: var(--accent-color-1);
+        }
+    /* #endregion LIGHTBOX */
+
 
     /* #region ========== MY HOBBIES ========== */
 
@@ -956,6 +1003,11 @@
     .project.img,
     .hobby.img {
         margin: 0 3em 0 3em;
+    }
+
+    .hobby.img{
+        max-width: 100%;
+        padding: 0 4em 0 4em;
     }
 
 }
@@ -1120,5 +1172,9 @@
         font-size: 1.2em;
         margin: 0 3em 0 3em;
         width: fit-content;
+    }
+
+    .hobby.img{
+        padding: 0;
     }
 }
