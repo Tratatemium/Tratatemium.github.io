@@ -54,10 +54,6 @@
     }
 
     /* Balance text wrapping on headings */
-    h1, h2,
-    h3, h4 {
-    text-wrap: balance;
-    }
 
     /* A elements that don't have a class get default styles */
     a:not([class]) {
@@ -729,11 +725,6 @@
         gap: 14em;
     }
 
-    .hobby h2 {
-
-        
-    }
-
     .hobby,
     .project{
         display: grid;
@@ -754,7 +745,13 @@
     .project p {
         width: 80ch;
         margin: auto;
-    }
+    } 
+    
+    .hobby h2,
+    .project h2 {
+        width: 52ch;
+        margin: auto;
+    }  
 
     a.wiki-link{
         text-decoration:underline;
@@ -991,15 +988,6 @@
     
     /* Hobbies */
 
-    .hobby h2,
-    .project h2{
-        margin: 0 auto 0 auto;
-    }
-
-    .project p,
-    .hobby p{
-        margin: 0 auto 0 auto;
-    }
     .project.img,
     .hobby.img {
         margin: 0 3em 0 3em;
@@ -1173,6 +1161,10 @@
         margin: 0 3em 0 3em;
         width: fit-content;
     }
+    .hobby h2,
+    .project h2 {
+        width: fit-content;
+    } 
 
     .hobby.img{
         padding: 0;
