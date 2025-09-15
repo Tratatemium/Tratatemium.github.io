@@ -108,3 +108,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+
+
+const checkbox = document.getElementById('theme-checkbox');
+const root = document.documentElement;
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    root.setAttribute('data-theme', 'dark');
+    checkbox.checked = true;
+}
+
+// Toggle theme
+checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+        root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        root.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+    }
+});
