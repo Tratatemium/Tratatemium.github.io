@@ -11,7 +11,7 @@
     <link rel="preload" as="image" href="images/background.png">
 </head>
 
-<script src="scripts.js"></script>
+
 
 <body>    
 
@@ -28,20 +28,29 @@
         
 
         <div class="my-hobbies">
+
+            <div id="lightbox" class="lightbox">
+                    <span class="close">&times;</span>
+                    <img class="lightbox-img" id="lightbox-img">
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+            </div>  
+
             <section class="hobby">
-                <h2># Etis atis animatis</h2>
+                <h2># Cooking</h2>
                 <P>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
+                    Cooking is one of my favorite hobbies. I enjoy trying out different Asian recipes 
+                    and baking sourdough bread. It reminds me of coding in a way -  following a recipe 
+                    is a type of an algorithm and you can experiment with ingredients in a dish like 
+                    with variables in a program until you get it just right!
                 </P>
                 <div class="hobby img">
-                    <img src="images/project.png" alt="">
-                </div>  
+                    <img src="images/Hobbies/Sourdough.png" alt="A pictutre of a sourdough bread">
+                    <img src="images/Hobbies/Brioche.png" alt="A pictutre of a brioche bread">
+                    <img src="images/Hobbies/Ramen.png" alt="A picture of a japanese ramen">
+                    <img src="images/Hobbies/Fried rice.png" alt="A picture of ingredientsfor cooking fried rice">
+                </div>
+                 
             </section>
             <section class="hobby">
                 <h2>#Etis atis animatis</h2>
@@ -111,6 +120,8 @@
         </section>
         <p class="copyright">@ 2025 Vladislav Zhuravskii</p>
     </footer>
+ 
     
+    <script src="scripts.js"></script>
 </body>
 </html>
