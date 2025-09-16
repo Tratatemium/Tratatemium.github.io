@@ -1,3 +1,6 @@
+
+// ========  ========
+
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".hobby, .project");
 
