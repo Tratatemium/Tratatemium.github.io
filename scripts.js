@@ -21,8 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   elements.forEach(el => observer.observe(el));
 });
 
-
-
 // ======== Lightbox for img view ========
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -50,8 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex = index;
   }
 
-  // Attach click handler to each section with .hobby.img
-  document.querySelectorAll(".hobby.img").forEach(section => {
+  // Attach click handler to each section with .project.img or .hobby.img
+  document.querySelectorAll(".project.img, .hobby.img").forEach(section => {
     const imgs = section.querySelectorAll("img");
     imgs.forEach((img, index) => {
       img.addEventListener("click", () => {
@@ -119,7 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
 
 // ======== Day / Night Mode switch ========
 

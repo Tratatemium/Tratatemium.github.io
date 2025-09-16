@@ -212,7 +212,6 @@
             align-items: center;
             justify-content: center;
             background: var(--background-color);
-            /* box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4); */
             cursor: pointer;
             transition: 0.3s;
         }
@@ -790,6 +789,29 @@
    ================================================== */
 /* #region HOBBIES & PROJECTS */
 
+    a.arrow-link{
+        text-decoration:underline;
+        color: var(--main-color);
+    }
+
+    a.arrow-link svg{
+        width: 1.1em;
+        height: 1.1em;
+        vertical-align: middle;
+        fill: var(--main-color);
+        margin-left: 0.2em;
+    }
+
+    a.arrow-link::after{
+        content: "↗";
+        font-size: 1em;
+    }
+
+    a.arrow-link:hover,
+    a.arrow-link:focus{
+        color: var(--accent-color-1);
+    }
+
     div.my-hobbies,
     div.my-projects{
         grid-row: 2;
@@ -829,17 +851,17 @@
     .project h2 {
         width: 52ch;
         margin: auto;
-    }  
-
-    a.wiki-link{
-        text-decoration:underline;
-        color: var(--main-color);
-    }
-    a.wiki-link:hover,
-    a.wiki-link:focus{
-        color: var(--accent-color-1);
     }
     
+    .project-links{
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        margin-top: -1em;
+        font-size: 1.2em;
+    }
+    
+    .project.img,
     .hobby.img{
         display: flex;
         flex-wrap: wrap;
@@ -850,6 +872,7 @@
         max-width: 70%;
     }
 
+    .project.img img,
     .hobby.img img{
         height: 10em;
         width: auto;
@@ -859,6 +882,8 @@
         transition: transform 0.2s;
     }
 
+    .project.img img:hover,
+    .project.img img:focus,
     .hobby.img img:hover,
     .hobby.img img:focus{
         transform: scale(1.1);
@@ -962,9 +987,17 @@
     /* #region ========== MY PROJECTS ========== */
 
         h1.my-projects,
-        .my-projects h2{
+        .my-projects h2,
+        .project-name{
             text-shadow: 2px 2px 2px rgb(from var( --accent-color-2) r g b / 0.6);
         } 
+
+        .project-name{
+            font-size: 1em;
+            margin-top: 0;
+            margin-bottom: -0.3em;
+            font-weight: bold;
+        }
 
     /* #endregion MY PROJECTS */
 
@@ -1071,6 +1104,7 @@
         margin: 0 3em 0 3em;
     }
 
+    .project.img,
     .hobby.img{
         max-width: 100%;
         padding: 0 4em 0 4em;
@@ -1244,6 +1278,7 @@
         width: fit-content;
     } 
 
+    .project.img,
     .hobby.img{
         padding: 0;
     }
