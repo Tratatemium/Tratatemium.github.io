@@ -897,12 +897,19 @@
         cursor: pointer;
     }
 
-    .project-separator {
+    .separator{
         text-align: center;
         font-size: 1.5rem;
-        color: var(--accent-color-3);
         margin: 0.5;
         letter-spacing: 0.5rem;
+    }
+
+    .project.separator {
+        color: var(--accent-color-2);
+    }
+
+    .hobby.separator{
+        color: var(--accent-color-3);
     }
 
     /* #region ========== LIGHTBOX ========== */
