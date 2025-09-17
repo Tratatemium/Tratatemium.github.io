@@ -12,7 +12,7 @@ Welcome to my personal webpage! This project showcases my skills, projects, and 
 - [File Structure](#file-structure)
 - [How to Run Locally](#how-to-run-locally)
 - [Future Improvements](#future-improvements)
-- [Contact](#contact)
+- [Contact](#cцontact)
 
 ---
 
@@ -55,6 +55,9 @@ This project is designed with accessibility in mind:
 ## File Structure
 ```
 index.html          # Main HTML file
+about-me.html       # About me page
+my-hobbies.html     # Page describing my hobbies
+my-projects.html    # Page describing coding projects I madde
 styles.css          # Custom styles
 script.js          # JavaScript file for interactivity
 README.md          # Project documentation
@@ -73,14 +76,13 @@ To view this project locally, follow these steps:
 ## Future Improvements
 - Implement a contact form with emailJS or a similar service.
 - Add more projects to the portfolio section.
-- Enhance the blog section with Markdown support.
 
 ---
 
 ## Contact
 Feel free to reach out to me through the following channels:
-- Email: [your.email@example.com](mailto:your.email@example.com)
-- LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/yourprofile)
-- GitHub: [github.com/yourusername](https://github.com/yourusername)
+- Email: [your.email@example.com](mailto:visitanoinvitado@gmail.com)
+- LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/vladislav-zhuravskii-8b24a22b6/)
+- GitHub: [github.com/yourusername](https://github.com/Tratatemium)
 
 Thank you for visiting my personal webpage!
