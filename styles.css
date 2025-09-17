@@ -99,6 +99,7 @@
         --accent-color-1: #FB531E;
         --accent-color-2: #188D82;
         --accent-color-3: #337F22;
+        --focus-color: var(--accent-color-1);
 
         --curtain-center-distance: 5em;
 
@@ -130,7 +131,10 @@
         --accent-color-1: #FF5F1F;
         --accent-color-2: #1BF0D7;
         --accent-color-3: #39FF3F;
+        --focus-color: var(--accent-color-2);
     }
+
+    
 /* #endregion */
 
 
@@ -163,6 +167,11 @@
 
         background-position: center top; 
         background-repeat:repeat;
+    }
+
+    :focus{
+        outline: 2px solid var(--focus-color);
+        outline-offset: 2px;
     }
 
     .accent-color-1{
