@@ -201,10 +201,6 @@
         text-decoration: none;
     }
 
-    a:hover{
-        color: var(--accent-color-1);
-    }
-
     h1{
         grid-row: 1;
         grid-column: 1;
@@ -322,9 +318,23 @@
         }
 
         nav a:hover,
-        nav a:focus{
+        nav a:focus-within{
+            color: var(--accent-color-1);
             font-weight: bolder;
+        }
 
+        .skip-link {
+            position: absolute;
+            left: 8em;
+            top: -4em;
+            z-index: 99;
+            color: var(--main-color);
+        }
+
+        a.skip-link:focus-within {
+            top: 2em; 
+            color: var(--accent-color-1);
+            font-weight: bolder;
         }
         
     /* #endregion NAVIGATION */
