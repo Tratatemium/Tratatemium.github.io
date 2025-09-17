@@ -33,35 +33,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector(".lightbox .next");
 
   let currentIndex = 0;
-  let currentImages = []; // Only images of the clicked section
+  let currentImages = []; // Only images of the clicked gallery
 
   // Show image in lightbox by index
   function showImage(index) {
-    lightbox.style.display = "flex";
-    lightboxImg.src = currentImages[index].src;
+    const img = currentImages[index];
 
-    // Set caption from data-caption or alt attribute
-    const captionText = currentImages[index].getAttribute("data-caption") 
-                    || currentImages[index].alt 
-                    || "";
-    lightboxCaption.textContent = captionText;
+    // Ensure the image is fully loaded before displaying it
+    const tempImg = new Image();
+    tempImg.src = img.src;
+    tempImg.onload = () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
 
-    currentIndex = index;
+      // Set caption from data-caption or alt attribute
+      const captionText = img.getAttribute("data-caption") || img.alt || "";
+      lightboxCaption.textContent = captionText;
 
-    // Focus the lightbox for keyboard navigation
-    lightbox.focus();
+      currentIndex = index;
+
+      // Focus the lightbox for keyboard navigation
+      lightbox.focus();
+    };
   }
 
   // Attach click and keyboard handlers to each image
-  document.querySelectorAll(".project.img img, .hobby.img img").forEach((img, index) => {
+  document.querySelectorAll(".project.img img, .hobby.img img").forEach((img) => {
     img.addEventListener("click", () => {
-      currentImages = Array.from(img.closest(".img").querySelectorAll("img")); // Get all images in the same gallery
+      // Find all images in the same gallery (parent container)
+      const gallery = img.closest(".project.img, .hobby.img");
+      currentImages = Array.from(gallery.querySelectorAll("img")); // Get all images in the same gallery
+      const index = currentImages.indexOf(img); // Get the index of the clicked image
       showImage(index);
     });
 
     img.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
-        currentImages = Array.from(img.closest(".img").querySelectorAll("img")); // Get all images in the same gallery
+        // Find all images in the same gallery (parent container)
+        const gallery = img.closest(".project.img, .hobby.img");
+        currentImages = Array.from(gallery.querySelectorAll("img")); // Get all images in the same gallery
+        const index = currentImages.indexOf(img); // Get the index of the focused image
         showImage(index);
       }
     });
