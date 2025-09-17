@@ -1,9 +1,9 @@
-    /* * {
+    * {
         animation-duration: 0s !important;
         animation-delay: 0s !important;
         transition-duration: 0s !important;
         transition-delay: 0s !important;
-    } */
+    }
 
     /* Disable all animations and transitions */
     /* *,
@@ -94,12 +94,13 @@
         --headline-font:'Fira Sans', sans-serif;
 
         --background-img: url(images/background.png);
-        --background-color: #e3ddda;
+        --background-color: #e7dfdc;
         --main-color: #2D2D2D;
-        --accent-color-1: #FB531E;
+        --accent-color-1: #EC3A04;
         --accent-color-2: #188D82;
         --accent-color-3: #337F22;
-        --focus-color: var(--accent-color-1);
+        --footer-focus-color: #195115;
+        --focus-color: var(--accent-color-3);
 
         --curtain-center-distance: 5em;
 
@@ -131,7 +132,8 @@
         --accent-color-1: #FF5F1F;
         --accent-color-2: #1BF0D7;
         --accent-color-3: #39FF3F;
-        --focus-color: var(--accent-color-2);
+        --focus-color: var(--accent-color-3);
+        --footer-focus-color: var(--accent-color-3);
     }
 
     
@@ -170,8 +172,16 @@
     }
 
     :focus{
+        outline: none;
+    }
+
+    :focus-visible{
         outline: 2px solid var(--focus-color);
         outline-offset: 2px;
+    }
+
+    footer :focus-visible{
+        outline-color: var(--footer-focus-color);
     }
 
     .accent-color-1{

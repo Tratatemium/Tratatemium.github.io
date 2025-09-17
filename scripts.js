@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Get theme switch checkbox and root element
 const checkbox = document.getElementById('theme-checkbox');
 const root = document.documentElement;
+const label = document.querySelector('label[for="theme-checkbox"]');
 
 // Load saved theme from localStorage
 const savedTheme = localStorage.getItem('theme');
@@ -147,5 +148,13 @@ checkbox.addEventListener('change', () => {
     } else {
         root.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
+    }
+});
+
+// Add keyboard accessibility for the toggle
+label.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        checkbox.checked = !checkbox.checked; // Toggle the checkbox state
+        checkbox.dispatchEvent(new Event('change')); // Trigger the change event
     }
 });
