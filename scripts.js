@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Get lightbox elements
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxCaption = document.getElementById("lightbox-caption");
   const closeBtn = document.querySelector(".lightbox .close");
   const prevBtn = document.querySelector(".lightbox .prev");
   const nextBtn = document.querySelector(".lightbox .next");
@@ -43,19 +44,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const captionText = currentImages[index].getAttribute("data-caption") 
                     || currentImages[index].alt 
                     || "";
-    document.getElementById("lightbox-caption").textContent = captionText;
+    lightboxCaption.textContent = captionText;
 
     currentIndex = index;
+
+    // Focus the lightbox for keyboard navigation
+    lightbox.focus();
   }
 
-  // Attach click handler to each section with .project.img or .hobby.img
-  document.querySelectorAll(".project.img, .hobby.img").forEach(section => {
-    const imgs = section.querySelectorAll("img");
-    imgs.forEach((img, index) => {
-      img.addEventListener("click", () => {
-        currentImages = Array.from(imgs); // Only this section’s images
+  // Attach click and keyboard handlers to each image
+  document.querySelectorAll(".project.img img, .hobby.img img").forEach((img, index) => {
+    img.addEventListener("click", () => {
+      currentImages = Array.from(img.closest(".img").querySelectorAll("img")); // Get all images in the same gallery
+      showImage(index);
+    });
+
+    img.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        currentImages = Array.from(img.closest(".img").querySelectorAll("img")); // Get all images in the same gallery
         showImage(index);
-      });
+      }
     });
   });
 
