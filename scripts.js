@@ -169,3 +169,4 @@ label.addEventListener('keydown', (e) => {
         checkbox.dispatchEvent(new Event('change')); // Trigger the change event
     }
 });
+
