@@ -1,11 +1,12 @@
-    * {
+    /* Force no animations or transitions in finished state - for testing purposes */
+    /* * {
         animation-duration: 0s !important;
         animation-delay: 0s !important;
         transition-duration: 0s !important;
         transition-delay: 0s !important;
-    }
+    } */
 
-    /* Disable all animations and transitions */
+    /* Disable all animations and transitions - for testing purposes*/
     /* *,
     *::before,
     *::after {

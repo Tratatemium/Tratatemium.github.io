@@ -1,10 +1,13 @@
 # Vladislav Zhuravskii - Personal Webpage
 
-Welcome to my personal webpage! This project showcases my skills, projects, and hobbies as a front-end developer. It is designed to be clean, user-friendly, and responsive, with a focus on accessibility and performance.
+Welcome to my personal webpage! This project showcases my skills, projects, and hobbies as a front-end developer. It is designed to be clean, user-friendly, and responsive, with a focus on accessibility, performance, and modern design principles.
+
+---
 
 ## Table of Contents
 - [About](#about)
 - [Features](#features)
+- [Accessibility](#accessibility)
 - [Technologies Used](#technologies-used)
 - [File Structure](#file-structure)
 - [How to Run Locally](#how-to-run-locally)
@@ -23,10 +26,21 @@ This webpage serves as a portfolio to highlight my journey as a front-end develo
 
 ## Features
 - **Responsive Design**: Optimized for various screen sizes, from desktop to mobile.
-- **Dark/Light Mode**: Toggle between themes using the switch in the top-left corner.
+- **Dark/Light Mode**: Toggle between themes using the accessible switch in the top-left corner.
 - **Interactive Animations**: Smooth animations for elements appearing on scroll.
-- **Lightbox Gallery**: View images in a full-screen lightbox with captions and navigation.
-- **Accessible Navigation**: ARIA labels and semantic HTML for improved accessibility.
+- **Lightbox Gallery**: View images in a full-screen lightbox with captions and keyboard navigation.
+- **Accessible Navigation**: ARIA labels, semantic HTML, and keyboard-friendly interactions.
+- **Performance Optimizations**: Lazy loading for images and preloading critical assets.
+
+---
+
+## Accessibility
+This project is designed with accessibility in mind:
+- **Keyboard Navigation**: All interactive elements (e.g., links, buttons, images) are focusable and operable via `Tab` and `Enter`.
+- **ARIA Labels**: Descriptive ARIA labels are added to improve screen reader support.
+- **Color Contrast**: The color scheme is tested to meet WCAG AA standards for text and background contrast.
+- **Focus Styles**: Visible focus outlines are provided for all focusable elements.
+- **Skip Navigation**: A "Skip to content" link allows users to bypass navigation and jump directly to the main content.
 
 ---
 
