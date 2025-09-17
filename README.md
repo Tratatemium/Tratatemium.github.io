@@ -74,6 +74,7 @@ To view this project locally, follow these steps:
 ---
 
 ## Future Improvements
+- Navigation bar stays at the top with scrolling, becoms a button in mobile
 - Implement a contact form with emailJS or a similar service.
 - Add more projects to the portfolio section.
 

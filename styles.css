@@ -1175,12 +1175,18 @@
         font-size: 1.2em;
     }
 
+    div.theme-toggle{
+        position: relative;
+        left: 0;
+        margin: 0 auto;
+    }
+
     nav{
         order: 1;
         justify-content: center;
         transform: none;
         font-size: 1.3em;
-        margin-top: 2em;        
+        margin-top: 0em;        
     }
 
     .word-cloud{
@@ -1323,5 +1329,10 @@
     .project.img,
     .hobby.img{
         padding: 0;
+    }
+
+    .project.img img,
+    .hobby.img img{
+        filter: grayscale(0);
     }
 }
