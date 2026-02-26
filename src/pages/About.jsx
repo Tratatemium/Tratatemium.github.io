@@ -1,9 +1,9 @@
 import styles from "./About.module.css"
 
 function About() {
-    return {
-
-    }
+    return (
+        <></>
+    )
 };
 
 export default About;

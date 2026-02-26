@@ -1,9 +1,9 @@
 import styles from "./ModeToggle.module.css"
 
 function ModeToggle() {
-    return {
-
-    }
+    return (
+        <></>
+    )
 };
 
 export default ModeToggle;

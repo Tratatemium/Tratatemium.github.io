@@ -1,9 +1,9 @@
 import styles from "./Footer.module.css"
 
 function Footer() {
-    return {
-
-    }
+    return (
+        <></>
+    )
 };
 
 export default Footer;
