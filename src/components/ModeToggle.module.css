@@ -1,0 +1,60 @@
+.toggle {
+  position: fixed;
+  left: 2em;
+  z-index: 99;
+}
+
+.input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.label {
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+  border: var(--accent-color-1) 2px solid;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input:checked + .label {
+  border-color: var(--accent-color-2);
+}
+
+.label:hover {
+  transform: scale(1.1);
+}
+
+.sun,
+.moon {
+  width: 70%;
+  height: 70%;
+  z-index: 100;
+}
+
+.sun {
+  fill: transparent;
+  stroke: var(--accent-color-1);
+  transition: 0.3s;
+}
+
+.moon {
+  display: none;
+  transition: 0.3s;
+}
+
+.input:checked + .label .sun {
+  display: none;
+}
+
+.input:checked + .label .moon {
+  display: block;
+  fill: var(--accent-color-2);
+}
