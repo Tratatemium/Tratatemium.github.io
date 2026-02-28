@@ -21,7 +21,7 @@
   justify-content: center;
   background: var(--background-color);
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 
 .checkbox:checked + .label {
@@ -44,12 +44,10 @@
   stroke: var(--accent-color-1);
   stroke-width: 1.5;
   stroke-linecap: round;
-  transition: 0.3s;
 }
 
 .moon {
   display: none;
-  transition: 0.3s;
 }
 
 .checkbox:checked + .label .sun {
