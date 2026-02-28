@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
-      <div lassName={styles.app}>
+      <div className={styles.app}>
         <header>
           <ModeToggle />
           <Navbar />
