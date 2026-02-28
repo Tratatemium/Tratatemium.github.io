@@ -1,25 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useId } from "react";
 import styles from "./ModeToggle.module.css";
 
 function ModeToggle() {
-  const [isDark, setIsDark] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  }, []);
+  const toggleId = useId();
+  const [isDark, setIsDark] = useState(
+    () => localStorage.getItem("theme") === "dark",
+  );
 
   useEffect(() => {
     if (isDark) {
       document.documentElement.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.removeAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", "light");
       localStorage.setItem("theme", "light");
     }
   }, [isDark]);
@@ -38,7 +31,7 @@ function ModeToggle() {
     <div className={styles.toggle}>
       <input
         className={styles.checkbox}
-        id="checkbox"
+        id={toggleId}
         type="checkbox"
         checked={isDark}
         onChange={handleChange}
@@ -46,7 +39,7 @@ function ModeToggle() {
       <label
         className={styles.label}
         onKeyDown={handleKeyDown}
-        htmlFor="checkbox"
+        htmlFor={toggleId}
         tabIndex={0}
         aria-label="Toggle dark mode"
       >
@@ -62,60 +55,15 @@ function ModeToggle() {
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M7.28451 10.3333C7.10026 10.8546 7 11.4156 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C11.4156 7 10.8546 7.10026 10.3333 7.28451"
-            stroke="current-color"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12 2V4"
-            stroke="current-color"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12 20V22"
-            stroke="current-color"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M4 12L2 12"
-            stroke="current-color"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M22 12L20 12"
-            stroke="current-color"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M19.7778 4.22266L17.5558 6.25424"
-            stroke="current-color"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M4.22217 4.22266L6.44418 6.25424"
-            stroke="current-color"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M6.44434 17.5557L4.22211 19.7779"
-            stroke="current-color"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M19.7778 19.7773L17.5558 17.5551"
-            stroke="current-color"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
+          <path d="M7.28451 10.3333C7.10026 10.8546 7 11.4156 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C11.4156 7 10.8546 7.10026 10.3333 7.28451" />
+          <path d="M12 2V4" />
+          <path d="M12 20V22" />
+          <path d="M4 12L2 12" />
+          <path d="M22 12L20 12" />
+          <path d="M19.7778 4.22266L17.5558 6.25424" />
+          <path d="M4.22217 4.22266L6.44418 6.25424" />
+          <path d="M6.44434 17.5557L4.22211 19.7779" />
+          <path d="M19.7778 19.7773L17.5558 17.5551" />
         </svg>
       </label>
     </div>
