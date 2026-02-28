@@ -1,29 +1,36 @@
+import { useEffect, useState } from "react";
 import styles from "./ModeToggle.module.css";
 
 function ModeToggle() {
-  const root = document.documentElement;
-  const checkbox = document.getElementById("checkbox");
+  const [isDark, setIsDark] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    root.setAttribute("data-theme", "dark");
-    checkbox.checked = true;
-  }
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDark(true);
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  }, []);
 
-  function handleChange(e) {
-    if (checkbox.checked) {
-      root.setAttribute("data-theme", "dark");
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
     } else {
-      root.removeAttribute("data-theme");
+      document.documentElement.removeAttribute("data-theme");
       localStorage.setItem("theme", "light");
     }
+  }, [isDark]);
+
+  function handleChange(e) {
+    setIsDark(e.target.checked);
   }
 
   function handleKeyDown(e) {
     if (e.key === "Enter") {
-      checkbox.checked = !checkbox.checked;
-      checkbox.dispatchEvent(new Event("change"));
+      setIsDark(!isDark);
     }
   }
 
@@ -33,6 +40,7 @@ function ModeToggle() {
         className={styles.checkbox}
         id="checkbox"
         type="checkbox"
+        checked={isDark}
         onChange={handleChange}
       />
       <label
