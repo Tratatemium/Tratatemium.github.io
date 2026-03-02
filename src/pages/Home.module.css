@@ -5,21 +5,13 @@
 
 .myPhoto {
   grid-area: img;
-  display: flex;
-  width: 20em;
-  height: 20em;
-  margin: auto;
-  place-items: center;
-  transform: translateX(calc(-1 * var(--curtain-center-distance)));
-
-  filter: grayscale(100%);
-
   animation:
     curtain-photo var(--animation-speed-curtain) var(--delay-curtain) backwards,
     element-appear var(--animation-speed-curtain) var(--delay-curtain) backwards;
 }
 
 .wordCloud {
+  grid-area: cloud;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: repeat(4, auto);
@@ -243,7 +235,6 @@
 
   margin: 0;
 }
-
 
 .skills span {
   opacity: 0;

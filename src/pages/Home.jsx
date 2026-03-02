@@ -1,10 +1,9 @@
 import styles from "./Home.module.css";
-import myPhoto from "../assets/my-photo.png";
 
-function Home() {
+function Home({ MyPhoto }) {
   return (
-    <div className={styles.content}>
-      <section id="maincontent" className={styles.wordCloud}>
+    <>
+      <section className={styles.wordCloud}>
         <p className={styles.myName}>
           <span>
             &lt;Vladislav
@@ -74,14 +73,8 @@ function Home() {
         </p>
       </section>
 
-      <section className={styles.myPhoto}>
-        <img
-          src={myPhoto}
-          alt="Vladislav Zhuravskii - Front-end Developer"
-          loading="lazy"
-        />
-      </section>
-    </div>
+      <MyPhoto className={styles.myPhoto} />
+    </>
   );
 }
 
