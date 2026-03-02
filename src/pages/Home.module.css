@@ -1,7 +1,6 @@
 .content {
   display: flex;
   flex-direction: row;
-  margin-bottom: 3em5;
 }
 
 .myPhoto {
@@ -244,6 +243,7 @@
 
   margin: 0;
 }
+
 
 .skills span {
   opacity: 0;
