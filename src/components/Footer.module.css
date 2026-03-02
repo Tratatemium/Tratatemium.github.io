@@ -5,7 +5,7 @@
   padding: 1em;
   gap: 1em;
   width: 100%;
-  background: color-mix(in srgb, var(--main-color) 40%, transparent);
+  background: color-mix(in srgb, var(--main-color) 20%, transparent);
 }
 
 .footer :focus-visible {

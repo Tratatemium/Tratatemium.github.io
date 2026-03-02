@@ -7,7 +7,8 @@ function Navbar() {
       <ul className={styles.list}>
         <li><Link to="/">[home]</Link></li>
         <li><Link to="/about">[about]</Link></li>
-        <li><Link to="/projects">[projects]</Link></li>
+        <li><Link to="/projects">[my projects]</Link></li>
+        <li><Link to="/hobbies">[my hobbies]</Link></li>
       </ul>
     </nav>
   );
