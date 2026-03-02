@@ -5,6 +5,7 @@
 
 .myPhoto {
   grid-area: img;
+  transform: translateX(calc(-1 * var(--curtain-center-distance)));
   animation:
     curtain-photo var(--animation-speed-curtain) var(--delay-curtain) backwards,
     element-appear var(--animation-speed-curtain) var(--delay-curtain) backwards;

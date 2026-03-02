@@ -4,7 +4,5 @@
   height: 20em;
   margin: auto;
   place-items: center;
-  transform: translateX(calc(-1 * var(--curtain-center-distance)));
-
   filter: grayscale(100%);
 }
