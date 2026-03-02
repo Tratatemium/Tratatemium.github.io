@@ -1,7 +1,7 @@
 .nav {
   /* grid-area: nav; */
   display: flex;
-  /* transform: translateX(calc(-1 * var(--curtain-center-distance))); */
+  transform: translateX(calc(3 * var(--curtain-center-distance)));
   /* width: 100%; */
   /* position: relative; */
   z-index: 2;
