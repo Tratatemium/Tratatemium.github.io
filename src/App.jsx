@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <div className={styles.app}>
-        <header>
+        <header className={styles.header}>
           <ModeToggle />
           <Navbar />
         </header>
@@ -22,8 +22,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
           </Routes>
-          <Footer />
         </main>
+        <Footer />
       </div>
     </Router>
   );
