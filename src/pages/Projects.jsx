@@ -1,6 +1,6 @@
 import styles from "./Projects.module.css"
 
-function Projects() {
+function Projects({ openLightbox }) {
     return (
         <></>
     )

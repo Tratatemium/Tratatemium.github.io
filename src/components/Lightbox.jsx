@@ -1,6 +1,6 @@
 import styles from "./Lightbox.module.css";
 
-function Lightbox() {
+function Lightbox({ isOpen, images, index, onClose }) {
   return (
     <div className={styles.Lightbox}>
       <span className={styles.close}>&times;</span>

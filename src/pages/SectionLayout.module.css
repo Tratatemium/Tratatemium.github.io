@@ -34,32 +34,6 @@
   margin: auto;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5em;
-  margin: 1em auto;
-  max-width: 70%;
-}
-
-.gallery img {
-  height: 10em;
-  width: auto;
-  border-radius: 1em;
-  border: var(--main-color) 1px solid;
-  filter: grayscale();
-  transition: transform 0.2s;
-}
-
-.gallery img:hover,
-.gallery img:focus {
-  transform: scale(1.1);
-  filter: grayscale(0);
-  cursor: pointer;
-}
-
 .separator {
   text-align: center;
   font-size: 1.5rem;

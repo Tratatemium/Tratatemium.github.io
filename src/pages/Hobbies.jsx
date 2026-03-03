@@ -1,20 +1,9 @@
+import Gallery from "../components/Gallery";
 import section from "./SectionLayout.module.css";
 import styles from "./Hobbies.module.css";
 import { galleries } from "../assets";
 
-function Hobbies() {
-  function createGallery(array) {
-    return array.map((img) => (
-      <img
-        key={img.src}
-        src={img.src}
-        alt={img.alt}
-        data-caption={img.caption}
-        loading="lazy"
-        tabIndex={0}
-      />
-    ));
-  }
+function Hobbies({ openLightbox }) {
   return (
     <>
       <h1 className={styles.title}>&lt;My hobbies&gt;</h1>
@@ -29,9 +18,7 @@ function Hobbies() {
             experiment with ingredients in a dish like with variables in a
             program until you get it just right!
           </p>
-          <div className={section.gallery}>
-            {createGallery(galleries.hobbies.cooking)}
-          </div>
+          <Gallery images={galleries.hobbies.cooking}/>
         </section>
 
         <section className={section.section}>
@@ -63,9 +50,7 @@ function Hobbies() {
               French polishing
             </a>
           </p>
-          <div className={section.gallery}>
-            {createGallery(galleries.hobbies.tableRestoration)}
-          </div>
+          <Gallery images={galleries.hobbies.tableRestoration}/>
           <div className={`${section.separator} ${styles.hobbySeparator}`}>
             • • •
           </div>
@@ -76,9 +61,7 @@ function Hobbies() {
             drawings, had the parts laser-cut from plywood, and handled the
             assembly and finish.
           </p>
-          <div className={section.gallery}>
-            {createGallery(galleries.hobbies.deskOrganiser)}
-          </div>
+          <Gallery images={galleries.hobbies.deskOrganiser}/>
         </section>
       </div>
     </>
