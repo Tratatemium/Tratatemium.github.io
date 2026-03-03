@@ -5,4 +5,10 @@
   margin: auto;
   place-items: center;
   filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.myPhoto:hover {
+  filter: none;
+  scale: 1.025
 }

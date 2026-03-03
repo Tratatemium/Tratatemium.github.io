@@ -1,0 +1,7 @@
+.title {
+  text-shadow: 2px 2px 2px rgb(from var(--accent-color-3) r g b / 0.6);
+}
+
+.hobbySeparator {
+  color: var(--accent-color-3);
+}

@@ -1,0 +1,23 @@
+h1.my-projects,
+.my-projects h2,
+.project-name {
+  text-shadow: 2px 2px 2px rgb(from var(--accent-color-2) r g b / 0.6);
+}
+
+.project-name {
+  font-size: 1em;
+  margin: auto;
+  font-weight: bold;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-top: -1em;
+  font-size: 1.2em;
+}
+
+.projectSeparator {
+  color: var(--accent-color-2);
+}
