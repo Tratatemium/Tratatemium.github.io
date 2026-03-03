@@ -1,7 +1,7 @@
-import Gallery from "../components/Gallery";
-import section from "./SectionLayout.module.css";
+import Gallery from "../../components/Gallery";
+import section from "../SectionLayout.module.css";
 import styles from "./Hobbies.module.css";
-import { galleries } from "../assets";
+import { galleries } from "./hobbiesData";
 
 function Hobbies({ openLightbox }) {
   return (

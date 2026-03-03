@@ -6,7 +6,7 @@ import styles from "./App.module.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
-import Hobbies from "./pages/Hobbies";
+import Hobbies from "./pages/Hobbies/Hobbies";
 import ModeToggle from "./components/ModeToggle";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
