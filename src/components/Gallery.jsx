@@ -12,6 +12,9 @@ function Gallery({ images, openLightbox }) {
           loading="lazy"
           tabIndex={0}
           onClick={() => openLightbox(images, index)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") openLightbox(images, index);
+          }}
         />
       ))}
     </div>

@@ -1,14 +1,19 @@
 import styles from "./Lightbox.module.css";
+import { useRef } from "react";
+import { useLightbox } from "./useLightbox";
 
 function Lightbox({ isOpen, images, index, onClose, onNext, onPrev }) {
+  const containerRef = useRef(null);
+  useLightbox(isOpen, containerRef, onClose, onNext, onPrev);
+
   if (!isOpen) return null;
 
   const currentImage = images[index];
 
   return (
-    <div className={styles.lightbox}>
+    <div className={styles.lightbox} ref={containerRef}>
       <button className={styles.close} onClick={onClose}>
-        &times;
+        ×
       </button>
       <div className={styles.lightboxContent}>
         <img
@@ -19,10 +24,10 @@ function Lightbox({ isOpen, images, index, onClose, onNext, onPrev }) {
         <p className={styles.lightboxCaption}>{currentImage?.caption}</p>
       </div>
       <button className={styles.prev} onClick={onPrev}>
-        &#10094;
+        ❮
       </button>
       <button className={styles.next} onClick={onNext}>
-        &#10095;
+        ❯
       </button>
     </div>
   );
