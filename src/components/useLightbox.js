@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 function useScrollLock(isOpen) {
   useEffect(() => {
@@ -30,7 +30,7 @@ function useKeyboardControls(isOpen, onClose, onNext, onPrev) {
 function useSwipeGestures(isOpen, onNext, onPrev) {
   useEffect(() => {
     if (!isOpen) return;
-    const startX = useRef(null);
+    const startX = null;
 
     function handleTouchStart(e) {
       startX = e.touches[0].clientX;
