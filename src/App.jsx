@@ -14,14 +14,32 @@ import MyPhoto from "./components/MyPhoto";
 import Lightbox from "./components/Lightbox";
 
 function App() {
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [currentImages, setCurrentImages] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [lightbox, setLightbox] = useState({
+    isOpen: false,
+    images: [],
+    index: 0,
+  });
 
   function openLightbox(images, index) {
-    setCurrentImages(images);
-    setCurrentIndex(index);
-    setIsLightboxOpen(true);
+    setLightbox({ isOpen: true, images, index });
+  }
+
+  function closeLightbox() {
+    setLightbox((prev) => ({ ...prev, isOpen: false }));
+  }
+
+  function handleNext() {
+    setLightbox((prev) => ({
+      ...prev,
+      index: (prev.index + 1) % prev.images.length,
+    }));
+  }
+
+  function handlePrev() {
+    setLightbox((prev) => ({
+      ...prev,
+      index: (prev.index - 1 + prev.images.length) % prev.images.length,
+    }));
   }
 
   return (
@@ -48,10 +66,12 @@ function App() {
         </div>
       </Router>
       <Lightbox
-        isOpen={isLightboxOpen}
-        images={currentImages}
-        index={currentIndex}
-        onClose={() => setIsLightboxOpen(false)}
+        isOpen={lightbox.isOpen}
+        images={lightbox.images}
+        index={lightbox.index}
+        onClose={closeLightbox}
+        onNext={handleNext}
+        onPrev={handlePrev}
       />
     </>
   );

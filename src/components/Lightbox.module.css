@@ -1,5 +1,5 @@
 .lightbox {
-  display: none;
+  display: flex;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -38,43 +38,44 @@
   box-sizing: border-box;
 }
 
-.lightbox .close {
+.close,
+.prev,
+.next {
   position: absolute;
-  top: 0px;
-  right: 0px;
   color: white;
   font-size: 3em;
-  width: 1.5em;
-  height: 1.5em;
-  text-align: center;
-  cursor: pointer;
-}
-
-.lightbox .prev,
-.lightbox .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background: none;
-  color: white;
-  font-size: 3em;
-  width: 2em;
-  height: 2em;
   text-shadow: 0 0 3px black;
   border: none;
   cursor: pointer;
+}
+
+.close {
+  top: 0px;
+  right: 0px;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+}
+
+.prev,
+.next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2em;
+  height: 2em;
   user-select: none;
 }
 
-.lightbox .prev {
+.prev {
   left: 20px;
 }
-.lightbox .next {
+.next {
   right: 20px;
 }
 
-.lightbox .prev:hover,
-.lightbox .next:hover,
-.lightbox .close:hover {
+.prev:hover,
+.next:hover,
+.close:hover {
   color: var(--accent-color-1);
 }
