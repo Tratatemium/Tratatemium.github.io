@@ -11,7 +11,7 @@ import ModeToggle from "./components/ModeToggle";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MyPhoto from "./components/MyPhoto";
-import Lightbox from "./components/Lightbox";
+import Lightbox from "./components/Lightbox/Lightbox";
 
 function App() {
   const [lightbox, setLightbox] = useState({
