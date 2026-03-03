@@ -1,11 +1,9 @@
 import styles from "./Gallery.module.css";
-import { useState } from "react";
 
-function Gallery({ images }) {
-
+function Gallery({ images, openLightbox }) {
   return (
     <div className={styles.gallery}>
-      {images.map((img) => (
+      {images.map((img, index) => (
         <img
           key={img.src}
           src={img.src}
@@ -13,6 +11,7 @@ function Gallery({ images }) {
           data-caption={img.caption}
           loading="lazy"
           tabIndex={0}
+          onClick={() => openLightbox(images, index)}
         />
       ))}
     </div>

@@ -18,7 +18,10 @@ function Hobbies({ openLightbox }) {
             experiment with ingredients in a dish like with variables in a
             program until you get it just right!
           </p>
-          <Gallery images={galleries.hobbies.cooking}/>
+          <Gallery
+            images={galleries.hobbies.cooking}
+            openLightbox={openLightbox}
+          />
         </section>
 
         <section className={section.section}>
@@ -50,7 +53,10 @@ function Hobbies({ openLightbox }) {
               French polishing
             </a>
           </p>
-          <Gallery images={galleries.hobbies.tableRestoration}/>
+          <Gallery
+            images={galleries.hobbies.tableRestoration}
+            openLightbox={openLightbox}
+          />
           <div className={`${section.separator} ${styles.hobbySeparator}`}>
             • • •
           </div>
@@ -61,7 +67,10 @@ function Hobbies({ openLightbox }) {
             drawings, had the parts laser-cut from plywood, and handled the
             assembly and finish.
           </p>
-          <Gallery images={galleries.hobbies.deskOrganiser}/>
+          <Gallery
+            images={galleries.hobbies.deskOrganiser}
+            openLightbox={openLightbox}
+          />
         </section>
       </div>
     </>
