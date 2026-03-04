@@ -7,19 +7,19 @@
   justify-content: center;
   margin-top: 5em;
   margin-bottom: 5em;
-  gap: 14em;
+  gap: 10em;
 }
 
 .section {
   display: grid;
   grid-auto-rows: auto;
   gap: 3em;
-  opacity: 1;
-  transform: translateY(50px);
-  transition: all 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
 }
 
-.section.show {
+.show {
   opacity: 1;
   transform: translateY(0);
 }

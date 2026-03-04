@@ -2,14 +2,22 @@ import Gallery from "../../components/Gallery";
 import section from "../SectionLayout.module.css";
 import styles from "./Hobbies.module.css";
 import { galleries } from "./hobbiesData";
+import useInView from "../../hooks/useInView";
 
 function Hobbies({ openLightbox }) {
+  const [ref1, isInview1] = useInView({ threshold: 0.2 });
+  const [ref2, isInview2] = useInView({ threshold: 0.2 });
+  const [ref3, isInview3] = useInView({ threshold: 0.2 });
+
   return (
     <>
       <h1 className={styles.title}>&lt;My hobbies&gt;</h1>
 
       <div className={section.content}>
-        <section className={section.section}>
+        <section
+          ref={ref1}
+          className={`${section.section} ${isInview1 ? section.show : ""}`}
+        >
           <h2 className={styles.title}># Cooking</h2>
           <p>
             Cooking is one of my favorite hobbies. I enjoy trying out different
@@ -24,7 +32,10 @@ function Hobbies({ openLightbox }) {
           />
         </section>
 
-        <section className={section.section}>
+        <section
+          ref={ref2}
+          className={`${section.section} ${isInview2 ? section.show : ""}`}
+        >
           <h2 className={styles.title}># Woodworking</h2>
           <p>
             Woodworking is another thing I deeply enjoy. There's something
@@ -60,6 +71,11 @@ function Hobbies({ openLightbox }) {
           <div className={`${section.separator} ${styles.hobbySeparator}`}>
             • • •
           </div>
+        </section>
+        <section
+          ref={ref3}
+          className={`${section.section} ${isInview3 ? section.show : ""}`}
+        >
           <p>
             My partner is into drawing and scrapbooking, so naturally she has a
             lot of art supplies. These desk organizers became our joint project:
