@@ -1,10 +1,6 @@
 import styles from "./Lightbox.module.css";
-import { useRef } from "react";
-import { useLightbox } from "./useLightbox";
 
-function Lightbox({ isOpen, images, index, onClose, onNext, onPrev }) {
-  const containerRef = useRef(null);
-  useLightbox(isOpen, containerRef, onClose, onNext, onPrev);
+function Lightbox({ containerRef, isOpen, images, index, onClose, onNext, onPrev }) {
 
   if (!isOpen) return null;
 

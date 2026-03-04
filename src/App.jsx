@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 
 import styles from "./App.module.css";
 
@@ -12,35 +11,17 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MyPhoto from "./components/MyPhoto";
 import Lightbox from "./components/Lightbox/Lightbox";
+import { useLightbox } from "./components/Lightbox/useLightbox";
 
 function App() {
-  const [lightbox, setLightbox] = useState({
-    isOpen: false,
-    images: [],
-    index: 0,
-  });
-
-  function openLightbox(images, index) {
-    setLightbox({ isOpen: true, images, index });
-  }
-
-  function closeLightbox() {
-    setLightbox((prev) => ({ ...prev, isOpen: false }));
-  }
-
-  function goToNext() {
-    setLightbox((prev) => ({
-      ...prev,
-      index: (prev.index + 1) % prev.images.length,
-    }));
-  }
-
-  function goToPrev() {
-    setLightbox((prev) => ({
-      ...prev,
-      index: (prev.index - 1 + prev.images.length) % prev.images.length,
-    }));
-  }
+  const {
+    lightbox,
+    openLightbox,
+    closeLightbox,
+    goToNext,
+    goToPrev,
+    containerRef,
+  } = useLightbox();
 
   return (
     <>
@@ -66,6 +47,7 @@ function App() {
         </div>
       </Router>
       <Lightbox
+        containerRef={containerRef}
         isOpen={lightbox.isOpen}
         images={lightbox.images}
         index={lightbox.index}

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function useScrollLock(isOpen) {
   useEffect(() => {
@@ -77,14 +77,41 @@ function useFocusTrap(containerRef, isOpen) {
 
     document.addEventListener("keydown", handleTab);
     return () => document.removeEventListener("keydown", handleTab);
-  }, [containerRef, isOpen]);
+  }, [isOpen]);
 }
 
-function useLightbox(isOpen, containerRef, onClose, onNext, onPrev) {
-  useScrollLock(isOpen);
-  useKeyboardControls(isOpen, onClose, onNext, onPrev);
-  useSwipeGestures(isOpen, onNext, onPrev);
-  useFocusTrap(containerRef, isOpen);
+function useLightbox() {
+  const containerRef = useRef(null);
+  const [lightbox, setLightbox] = useState({ isOpen: false, images: [], index: 0 });
+
+  const openLightbox = useCallback((images, index) => {
+    setLightbox({ isOpen: true, images, index });
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setLightbox((prev) => ({ ...prev, isOpen: false }));
+  }, []);
+
+  const goToNext = useCallback(() => {
+    setLightbox((prev) => ({
+      ...prev,
+      index: (prev.index + 1) % prev.images.length,
+    }));
+  }, []);
+
+  const goToPrev = useCallback(() => {
+    setLightbox((prev) => ({
+      ...prev,
+      index: (prev.index - 1 + prev.images.length) % prev.images.length,
+    }));
+  }, []);
+
+  useScrollLock(lightbox.isOpen);
+  useKeyboardControls(lightbox.isOpen, closeLightbox, goToNext, goToPrev);
+  useSwipeGestures(lightbox.isOpen, goToNext, goToPrev);
+  useFocusTrap(containerRef, lightbox.isOpen);
+
+  return { lightbox, openLightbox, closeLightbox, goToNext, goToPrev, containerRef };
 }
 
 export { useLightbox };
