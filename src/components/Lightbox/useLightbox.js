@@ -30,7 +30,7 @@ function useKeyboardControls(isOpen, onClose, onNext, onPrev) {
 function useSwipeGestures(isOpen, onNext, onPrev) {
   useEffect(() => {
     if (!isOpen) return;
-    const startX = null;
+    let startX = null;
 
     function handleTouchStart(e) {
       startX = e.touches[0].clientX;
