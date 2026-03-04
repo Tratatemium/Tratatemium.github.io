@@ -28,14 +28,14 @@ function App() {
     setLightbox((prev) => ({ ...prev, isOpen: false }));
   }
 
-  function handleNext() {
+  function goToNext() {
     setLightbox((prev) => ({
       ...prev,
       index: (prev.index + 1) % prev.images.length,
     }));
   }
 
-  function handlePrev() {
+  function goToPrev() {
     setLightbox((prev) => ({
       ...prev,
       index: (prev.index - 1 + prev.images.length) % prev.images.length,
@@ -50,8 +50,8 @@ function App() {
           <main className={styles.content}>
             <Navbar />
             <Routes>
-              <Route path="/" element={<Home MyPhoto={MyPhoto} />} />
-              <Route path="/about" element={<About MyPhoto={MyPhoto} />} />
+              <Route path="/" element={<Home PhotoComponent={MyPhoto} />} />
+              <Route path="/about" element={<About PhotoComponent={MyPhoto} />} />
               <Route
                 path="/projects"
                 element={<Projects openLightbox={openLightbox} />}
@@ -70,8 +70,8 @@ function App() {
         images={lightbox.images}
         index={lightbox.index}
         onClose={closeLightbox}
-        onNext={handleNext}
-        onPrev={handlePrev}
+        onNext={goToNext}
+        onPrev={goToPrev}
       />
     </>
   );

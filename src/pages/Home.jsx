@@ -1,6 +1,6 @@
 import styles from "./Home.module.css";
 
-function Home({ MyPhoto }) {
+function Home({ PhotoComponent }) {
   return (
     <>
       <section className={styles.wordCloud}>
@@ -73,7 +73,7 @@ function Home({ MyPhoto }) {
         </p>
       </section>
 
-      <MyPhoto className={styles.myPhoto} />
+      <PhotoComponent className={styles.myPhoto} />
     </>
   );
 }

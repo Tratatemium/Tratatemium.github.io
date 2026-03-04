@@ -1,11 +1,11 @@
 import styles from "./About.module.css";
 
-function About({ MyPhoto }) {
+function About({ PhotoComponent }) {
   return (
     <>
       <h1 className={styles.title}>&lt;About me&gt;</h1>
 
-      <MyPhoto className={styles.myPhoto} />
+      <PhotoComponent className={styles.myPhoto} />
 
       <section className={styles.text}>
         <p>
