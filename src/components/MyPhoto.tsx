@@ -1,7 +1,11 @@
 import styles from "./MyPhoto.module.css";
 import myPhoto from "../assets/my-photo.png";
 
-function MyPhoto({ className }) {
+interface MyPhotoProps {
+  className?: string;
+}
+
+function MyPhoto({ className }: MyPhotoProps) {
   return (
     <section className={`${styles.myPhoto}${className ? ` ${className}` : ""}`}>
       <img

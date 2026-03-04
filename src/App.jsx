@@ -7,9 +7,9 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Hobbies from "./pages/Hobbies/Hobbies";
 import ModeToggle from "./components/ModeToggle";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar.tsx";
 import Footer from "./components/Footer";
-import MyPhoto from "./components/MyPhoto";
+import MyPhoto from "./components/MyPhoto.tsx";
 import Lightbox from "./components/Lightbox/Lightbox";
 import { useLightbox } from "./components/Lightbox/useLightbox";
 
