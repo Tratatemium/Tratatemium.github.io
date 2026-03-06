@@ -40,31 +40,3 @@
   margin: 0.5;
   letter-spacing: 0.5rem;
 }
-
-.arrowLink {
-  text-decoration: underline;
-  color: var(--main-color);
-}
-
-.arrowLink svg {
-  width: 1.1em;
-  height: 1.1em;
-  vertical-align: middle;
-  fill: var(--main-color);
-  margin-left: 0.2em;
-}
-
-.arrowLink::after {
-  content: "↗";
-  font-size: 1em;
-}
-
-.arrowLink:hover,
-.arrowLink:focus {
-  color: var(--accent-color-1);
-}
-
-.arrowLink:hover svg,
-.arrowLink:focus svg {
-  fill: var(--accent-color-1);
-}
