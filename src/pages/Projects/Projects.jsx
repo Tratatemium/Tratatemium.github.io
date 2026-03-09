@@ -2,6 +2,7 @@ import styles from "./Projects.module.css";
 import Gallery from "../../components/Gallery";
 import ArrowLink from "../../components/ArrowLink";
 import section from "../SectionLayout.module.css";
+import { galleries } from "./Projects.data.js";
 import useInView from "../../hooks/useInView";
 
 function Projects({ openLightbox }) {
@@ -33,10 +34,10 @@ function Projects({ openLightbox }) {
             , developed as part of the Front-End Development program at Hyper
             Island.
           </p>
-          {/* <Gallery
-            images={galleries.hobbies.cooking}
+          <Gallery
+            images={galleries.my2048game}
             openLightbox={openLightbox}
-          /> */}
+          />
           <div class={styles.links}>
             <ArrowLink
               href="https://tratatemium.github.io/2048-game/"

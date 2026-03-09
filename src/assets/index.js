@@ -15,3 +15,7 @@ export { default as DeskOrganiser4 } from "./Hobbies/Desk-organaiser-4.jpg";
 export { default as DeskOrganiser5 } from "./Hobbies/Desk-organaiser-5.jpg";
 export { default as DeskOrganiser6 } from "./Hobbies/Desk-organaiser-6.jpg";
 export { default as DeskOrganiser7 } from "./Hobbies/Desk-organaiser-7.jpg";
+export { default as My2048game1 } from "./Projects/2048-01.png";
+export { default as My2048game2 } from "./Projects/2048-02.png";
+export { default as My2048game3 } from "./Projects/2048-03.png";
+export { default as My2048game4 } from "./Projects/2048-04.png";

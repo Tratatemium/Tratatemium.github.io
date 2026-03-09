@@ -1,7 +1,7 @@
 import Gallery from "../../components/Gallery";
 import section from "../SectionLayout.module.css";
 import styles from "./Hobbies.module.css";
-import { galleries } from "./hobbiesData";
+import { galleries } from "./Hobbies.data.js";
 import useInView from "../../hooks/useInView";
 
 function Hobbies({ openLightbox }) {
@@ -27,7 +27,7 @@ function Hobbies({ openLightbox }) {
             program until you get it just right!
           </p>
           <Gallery
-            images={galleries.hobbies.cooking}
+            images={galleries.cooking}
             openLightbox={openLightbox}
           />
         </section>
@@ -65,7 +65,7 @@ function Hobbies({ openLightbox }) {
             </a>
           </p>
           <Gallery
-            images={galleries.hobbies.tableRestoration}
+            images={galleries.tableRestoration}
             openLightbox={openLightbox}
           />
           <div className={`${section.separator} ${styles.hobbySeparator}`}>
@@ -84,7 +84,7 @@ function Hobbies({ openLightbox }) {
             assembly and finish.
           </p>
           <Gallery
-            images={galleries.hobbies.deskOrganiser}
+            images={galleries.deskOrganiser}
             openLightbox={openLightbox}
           />
         </section>
