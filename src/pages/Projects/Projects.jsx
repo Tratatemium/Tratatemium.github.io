@@ -14,24 +14,40 @@ function Projects({ openLightbox }) {
           ref={ref1}
           className={`${section.section} ${isInview1 ? section.show : ""}`}
         >
-          <h2 className={styles.title}># Project 1</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+          <h2 className={styles.title}># 2048 Web Game</h2>
+          <p className={styles.description}>
+            A modern, responsive web version of the classic 2048 sliding puzzle
+            game, built with HTML, CSS, and JavaScript. The project features
+            smooth animations, a neon-inspired UI, and full responsiveness for
+            both desktop and mobile devices. Players can use keyboard arrows or
+            swipe gestures to merge tiles, track their score and moves, and
+            restart the game anytime. This project demonstrates interactive game
+            logic, responsive design, and user-focused UI implementation.
+          </p>
+          <p className={styles.description}>
+            Inspired by{" "}
+            <ArrowLink
+              href="https://play2048.co/"
+              text="Gabriele Cirulli’s original 2048 game"
+            />
+            , developed as part of the Front-End Development program at Hyper
+            Island.
           </p>
           {/* <Gallery
             images={galleries.hobbies.cooking}
             openLightbox={openLightbox}
           /> */}
           <div class={styles.links}>
-            <ArrowLink href="s" text="Live website" svgType="Globe" />
-            <ArrowLink href="s" text="GitHub page" svgType="GitHub" />
-            <ArrowLink href="s" text="Nothing" />
+            <ArrowLink
+              href="https://tratatemium.github.io/2048-game/"
+              text="2048 game"
+              svgType="Globe"
+            />
+            <ArrowLink
+              href="https://github.com/Tratatemium/2048-game"
+              text="GitHub page"
+              svgType="GitHub"
+            />
           </div>
           <div className={`${section.separator} ${styles.projectSeparator}`}>
             • • •

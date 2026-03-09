@@ -1,7 +1,7 @@
 export { default as Sourdough } from "./Hobbies/Sourdough.png";
 export { default as Brioche } from "./Hobbies/Brioche.png";
 export { default as Ramen } from "./Hobbies/Ramen.png";
-export { default as FriedRice } from "./Hobbies/Fried rice.png";
+export { default as FriedRice } from "./Hobbies/Fried-rice.png";
 export { default as TableRestoration1 } from "./Hobbies/Table-restoration-1.jpg";
 export { default as TableRestoration2 } from "./Hobbies/Table-restoration-2.jpg";
 export { default as TableRestoration3 } from "./Hobbies/Table-restoration-3.jpg";
