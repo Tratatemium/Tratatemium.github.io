@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0f0c7cf8.css",
+    "main.js": "/static/js/main.030acbbb.js",
+    "static/js/453.1eb0bf63.chunk.js": "/static/js/453.1eb0bf63.chunk.js",
+    "static/media/Brioche.png": "/static/media/Brioche.259d2154c3c0c34d0aea.png",
+    "static/media/Fried rice.png": "/static/media/Fried rice.47fafa9f23103eb2dfa7.png",
+    "static/media/Sourdough.png": "/static/media/Sourdough.94e99574d3ef227509f2.png",
+    "static/media/Ramen.png": "/static/media/Ramen.74cf197820eb140a8700.png",
+    "static/media/background-night.png": "/static/media/background-night.8254cbf80f74b7b8b8b3.png",
+    "static/media/my-photo.png": "/static/media/my-photo.9df4201b9339fc7bb171.png",
+    "static/media/background.png": "/static/media/background.938902ef84e4638cb134.png",
+    "static/media/Table-restoration-3.jpg": "/static/media/Table-restoration-3.4a45da66a300b1017bb5.jpg",
+    "static/media/Table-restoration-1.jpg": "/static/media/Table-restoration-1.acfb4e4d944667ae77f6.jpg",
+    "static/media/Desk-organaiser-2.jpg": "/static/media/Desk-organaiser-2.e601db9f8c78584088f8.jpg",
+    "static/media/Table-restoration-5.jpg": "/static/media/Table-restoration-5.bc2ab33fe575e159580f.jpg",
+    "static/media/Desk-organaiser-1.jpg": "/static/media/Desk-organaiser-1.f231fb96100d271d5b6d.jpg",
+    "static/media/Table-restoration-6.jpg": "/static/media/Table-restoration-6.310ed941d00daa5cd324.jpg",
+    "static/media/Table-restoration-4.jpg": "/static/media/Table-restoration-4.8b73a28a3f744f5cc56d.jpg",
+    "static/media/Desk-organaiser-7.jpg": "/static/media/Desk-organaiser-7.21d9b9e6efc4e95e8d11.jpg",
+    "static/media/Table-restoration-2.jpg": "/static/media/Table-restoration-2.bcfdc9874731f69ca63a.jpg",
+    "static/media/Desk-organaiser-3.jpg": "/static/media/Desk-organaiser-3.8faf7653276d4031abb3.jpg",
+    "static/media/Desk-organaiser-4.jpg": "/static/media/Desk-organaiser-4.50f9b459c4392b734193.jpg",
+    "static/media/Desk-organaiser-6.jpg": "/static/media/Desk-organaiser-6.279659414428080ebae7.jpg",
+    "static/media/Desk-organaiser-5.jpg": "/static/media/Desk-organaiser-5.efb075753437b6a8c0dd.jpg",
+    "index.html": "/index.html",
+    "main.0f0c7cf8.css.map": "/static/css/main.0f0c7cf8.css.map",
+    "main.030acbbb.js.map": "/static/js/main.030acbbb.js.map",
+    "453.1eb0bf63.chunk.js.map": "/static/js/453.1eb0bf63.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f0c7cf8.css",
+    "static/js/main.030acbbb.js"
+  ]
+}
