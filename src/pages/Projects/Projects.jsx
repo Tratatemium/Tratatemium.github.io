@@ -7,6 +7,8 @@ import useInView from "../../hooks/useInView";
 
 function Projects({ openLightbox }) {
   const [ref1, isInview1] = useInView({ threshold: 0.2 });
+  const [ref2, isInview2] = useInView({ threshold: 0.2 });
+  const [ref3, isInview3] = useInView({ threshold: 0.2 });
   return (
     <>
       <h1 className={styles.title}>&lt;My projects&gt;</h1>
@@ -34,10 +36,7 @@ function Projects({ openLightbox }) {
             , developed as part of the Front-End Development program at Hyper
             Island.
           </p>
-          <Gallery
-            images={galleries.my2048game}
-            openLightbox={openLightbox}
-          />
+          <Gallery images={galleries.my2048game} openLightbox={openLightbox} />
           <div class={styles.links}>
             <ArrowLink
               href="https://tratatemium.github.io/2048-game/"
@@ -46,6 +45,76 @@ function Projects({ openLightbox }) {
             />
             <ArrowLink
               href="https://github.com/Tratatemium/2048-game"
+              text="GitHub page"
+              svgType="GitHub"
+            />
+          </div>
+          <div className={`${section.separator} ${styles.projectSeparator}`}>
+            • • •
+          </div>
+        </section>
+
+        <section
+          ref={ref2}
+          className={`${section.section} ${isInview2 ? section.show : ""}`}
+        >
+          <h2 className={styles.title}>
+            # HappyPaws — Collaborative Frontend Project
+          </h2>
+          <p className={styles.description}>
+            HappyPaws is a mobile-first pet adoption platform developed
+            collaboratively with other students as part of Agile & UX coursework
+            at Hyper Island. Built using HTML, CSS, Vanilla JavaScript, and
+            Vite, the application allows users to browse pets, filter by
+            species, save favorites with localStorage, and complete an adoption
+            workflow. The project emphasized team collaboration using Git, Agile
+            development practices, and component-based architecture, while
+            implementing responsive design, accessibility features, and
+            interactive UI elements such as pet galleries, urgent adoption
+            highlights, and a chat interface.
+          </p>
+          <Gallery images={galleries.happyPaws} openLightbox={openLightbox} />
+          <div class={styles.links}>
+            <ArrowLink
+              href="https://tratatemium.github.io/HappyPaws/"
+              text="Happy paws"
+              svgType="Globe"
+            />
+            <ArrowLink
+              href="https://github.com/Tratatemium/HappyPaws"
+              text="GitHub page"
+              svgType="GitHub"
+            />
+          </div>
+          <div className={`${section.separator} ${styles.projectSeparator}`}>
+            • • •
+          </div>
+        </section>
+
+        <section
+          ref={ref3}
+          className={`${section.section} ${isInview3 ? section.show : ""}`}
+        >
+          <h2 className={styles.title}># Memory Card Game</h2>
+          <p className={styles.description}>
+            A browser-based Memory Card Game built with HTML, CSS, and
+            JavaScript, featuring interactive card-flipping animations and
+            multiple difficulty levels ranging from 6 to 18 pairs. The project
+            focuses on DOM manipulation, game logic, and responsive UI design,
+            including features such as move tracking, a win dialog, restart and
+            main menu functionality, and a clean responsive layout. This project
+            demonstrates core frontend development skills including JavaScript
+            event handling, card shuffling algorithms, and CSS animations.
+          </p>
+          <Gallery images={galleries.memoryGame} openLightbox={openLightbox} />
+          <div class={styles.links}>
+            <ArrowLink
+              href="https://tratatemium.github.io/Memory-game/"
+              text="Memory game"
+              svgType="Globe"
+            />
+            <ArrowLink
+              href="https://github.com/Tratatemium/Memory-game"
               text="GitHub page"
               svgType="GitHub"
             />
