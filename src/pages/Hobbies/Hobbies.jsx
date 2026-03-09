@@ -8,6 +8,7 @@ function Hobbies({ openLightbox }) {
   const [ref1, isInview1] = useInView({ threshold: 0.2 });
   const [ref2, isInview2] = useInView({ threshold: 0.2 });
   const [ref3, isInview3] = useInView({ threshold: 0.2 });
+  const [ref4, isInview4] = useInView({ threshold: 0.2 });
 
   return (
     <>
@@ -26,10 +27,7 @@ function Hobbies({ openLightbox }) {
             experiment with ingredients in a dish like with variables in a
             program until you get it just right!
           </p>
-          <Gallery
-            images={galleries.cooking}
-            openLightbox={openLightbox}
-          />
+          <Gallery images={galleries.cooking} openLightbox={openLightbox} />
         </section>
 
         <section
@@ -45,9 +43,12 @@ function Hobbies({ openLightbox }) {
             entirely new pieces and restoring old furniture, giving them a new
             chapter in their story. Here are two of my favorite projects:
           </p>
-          <div className={`${section.separator} ${styles.hobbySeparator}`}>
-            • • •
-          </div>
+        </section>
+
+        <section
+          ref={ref3}
+          className={`${section.section} ${isInview3 ? section.show : ""}`}
+        >
           <p>
             This late 19th-century table belonged to my great-grandmother and
             has been passed down through my family. Over the years, it suffered
@@ -68,13 +69,11 @@ function Hobbies({ openLightbox }) {
             images={galleries.tableRestoration}
             openLightbox={openLightbox}
           />
-          <div className={`${section.separator} ${styles.hobbySeparator}`}>
-            • • •
-          </div>
         </section>
+
         <section
-          ref={ref3}
-          className={`${section.section} ${isInview3 ? section.show : ""}`}
+          ref={ref4}
+          className={`${section.section} ${isInview4 ? section.show : ""}`}
         >
           <p>
             My partner is into drawing and scrapbooking, so naturally she has a

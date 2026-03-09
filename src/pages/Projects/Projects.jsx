@@ -49,9 +49,6 @@ function Projects({ openLightbox }) {
               svgType="GitHub"
             />
           </div>
-          <div className={`${section.separator} ${styles.projectSeparator}`}>
-            • • •
-          </div>
         </section>
 
         <section
@@ -86,9 +83,6 @@ function Projects({ openLightbox }) {
               svgType="GitHub"
             />
           </div>
-          <div className={`${section.separator} ${styles.projectSeparator}`}>
-            • • •
-          </div>
         </section>
 
         <section
@@ -118,9 +112,6 @@ function Projects({ openLightbox }) {
               text="GitHub page"
               svgType="GitHub"
             />
-          </div>
-          <div className={`${section.separator} ${styles.projectSeparator}`}>
-            • • •
           </div>
         </section>
       </div>
