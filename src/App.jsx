@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import styles from "./App.module.css";
 
+import { ThemeProvider } from "./context/ThemeContext.jsx";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects/Projects";
@@ -25,27 +27,32 @@ function App() {
 
   return (
     <>
-      <Router>
-        <div className={styles.app}>
-          <ModeToggle />
-          <main className={styles.content}>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home PhotoComponent={MyPhoto} />} />
-              <Route path="/about" element={<About PhotoComponent={MyPhoto} />} />
-              <Route
-                path="/projects"
-                element={<Projects openLightbox={openLightbox} />}
-              />
-              <Route
-                path="/hobbies"
-                element={<Hobbies openLightbox={openLightbox} />}
-              />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
+      <ThemeProvider>
+        <Router>
+          <div className={styles.app}>
+            <ModeToggle />
+            <main className={styles.content}>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Home PhotoComponent={MyPhoto} />} />
+                <Route
+                  path="/about"
+                  element={<About PhotoComponent={MyPhoto} />}
+                />
+                <Route
+                  path="/projects"
+                  element={<Projects openLightbox={openLightbox} />}
+                />
+                <Route
+                  path="/hobbies"
+                  element={<Hobbies openLightbox={openLightbox} />}
+                />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </Router>
+      </ThemeProvider>
       <Lightbox
         containerRef={containerRef}
         isOpen={lightbox.isOpen}

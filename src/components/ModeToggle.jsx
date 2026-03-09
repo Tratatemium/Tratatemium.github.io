@@ -1,29 +1,18 @@
-import { useEffect, useState, useId } from "react";
+import { useEffect, useState, useContext, useId } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import styles from "./ModeToggle.module.css";
 
 function ModeToggle() {
   const toggleId = useId();
-  const [isDark, setIsDark] = useState(
-    () => localStorage.getItem("theme") === "dark",
-  );
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDark]);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   function handleChange(e) {
-    setIsDark(e.target.checked);
+    toggleTheme();
   }
 
   function handleKeyDown(e) {
     if (e.key === "Enter") {
-      setIsDark(!isDark);
+      toggleTheme();
     }
   }
 
@@ -33,7 +22,7 @@ function ModeToggle() {
         className={styles.checkbox}
         id={toggleId}
         type="checkbox"
-        checked={isDark}
+        checked={theme === "dark"}
         onChange={handleChange}
       />
       <label
