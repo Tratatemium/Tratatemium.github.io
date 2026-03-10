@@ -58,3 +58,11 @@
   display: block;
   fill: var(--accent-color-2);
 }
+
+@media (max-width: 600px) {
+  .toggle {
+    position: relative;
+    left: 0;
+    margin: 0 auto;
+  }
+}

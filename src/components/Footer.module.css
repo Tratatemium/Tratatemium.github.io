@@ -37,3 +37,9 @@
   font-size: 0.8em;
   margin: auto;
 }
+
+@media (max-width: 600px) {
+  .svg {
+    width: 3.7em;
+  }
+}

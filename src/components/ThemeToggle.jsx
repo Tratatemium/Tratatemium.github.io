@@ -1,8 +1,8 @@
-import { useEffect, useState, useContext, useId } from "react";
+import { useContext, useId } from "react";
 import { ThemeContext } from "../context/ThemeContext";
-import styles from "./ModeToggle.module.css";
+import styles from "./ThemeToggle.module.css";
 
-function ModeToggle() {
+function ThemeToggle() {
   const toggleId = useId();
   const { theme, toggleTheme } = useContext(ThemeContext);
 
@@ -59,4 +59,4 @@ function ModeToggle() {
   );
 }
 
-export default ModeToggle;
+export default ThemeToggle;

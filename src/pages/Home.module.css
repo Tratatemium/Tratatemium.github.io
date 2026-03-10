@@ -326,3 +326,107 @@
 }
 
 /* #endregion HOBBIES*/
+
+@media (max-width: 1100px) {
+  .wordCloud {
+    justify-self: center;
+    transform: rotate(-45deg);
+  }
+
+  .myPhoto {
+    transform: none;
+  }
+
+  @keyframes curtain-cloud {
+  }
+
+  @keyframes curtain-photo {
+  }
+
+  @keyframes element-appear {
+    from {
+      transform: translate(0, 0) scale(0.5);
+      opacity: 0;
+    }
+  }
+  .hobbies1 span,
+  .hobbies2 span {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .wordCloud {
+    order: 3;
+    justify-self: center;
+    margin: auto;
+    transform: none;
+  }
+
+  .myPhoto {
+    order: 2;
+    margin: auto;
+    margin-top: 3em;
+    transform: none;
+  }
+
+  @keyframes curtain-cloud {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  @keyframes curtain-photo {
+    from {
+      transform: translateY(50%);
+    }
+  }
+
+  @keyframes element-appear {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .hello {
+    transform: translate(-40%, 80%);
+  }
+
+  @keyframes rotate-hello {
+  }
+
+  .myName {
+    transform: translate(0%, -20%);
+  }
+
+  @keyframes rotate-name {
+  }
+
+  .occupation {
+    transform: translate(-8%, -20%);
+  }
+
+  .skills {
+    opacity: 0;
+  }
+
+  @keyframes skills-down {
+  }
+
+  @keyframes skills-appear {
+  }
+
+  .hobbies1 span,
+  .hobbies2 span {
+    opacity: 0;
+  }
+
+  @keyframes hobbies-1-slide {
+  }
+
+  @keyframes hobbies-2-slide {
+  }
+}

@@ -52,3 +52,9 @@ h1 {
   justify-self: center;
   font-size: 3em;
 }
+
+@media (max-width: 600px) {
+  html {
+    font-size: clamp(0.4rem, 0.4rem + 0.5vw, 2rem);
+  }
+}

@@ -51,3 +51,9 @@
   --focus-color: var(--accent-color-3);
   --footer-focus-color: var(--accent-color-3);
 }
+
+@media (max-width: 1100px) {
+  :root {
+    --delay-rotation: var(--delay-curtain);
+  }
+}
