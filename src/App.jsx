@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useId } from "react";
 
 import styles from "./App.module.css";
 
@@ -8,6 +9,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects/Projects";
 import Hobbies from "./pages/Hobbies/Hobbies";
+import SkipLink from "./components/SkipLink.jsx";
 import ModeToggle from "./components/ModeToggle";
 import Navbar from "./components/Navbar.tsx";
 import Footer from "./components/Footer";
@@ -25,13 +27,16 @@ function App() {
     containerRef,
   } = useLightbox();
 
+  const mainId = useId();
+
   return (
     <>
       <ThemeProvider>
         <Router>
           <div className={styles.app}>
+            <SkipLink mainId={mainId}/>
             <ModeToggle />
-            <main className={styles.content}>
+            <main className={styles.content} id={mainId}>
               <Navbar />
               <Routes>
                 <Route path="/" element={<Home PhotoComponent={MyPhoto} />} />
