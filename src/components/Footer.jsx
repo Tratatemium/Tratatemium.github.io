@@ -7,6 +7,7 @@ function Footer() {
         <a
           href="mailto:visitanoinvitado@gmail.com"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="Send email"
         >
           <svg
@@ -22,6 +23,7 @@ function Footer() {
         <a
           href="https://www.linkedin.com/in/vladislav-zhuravskii-8b24a22b6/"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="LinkedIn profile"
         >
           <svg
@@ -50,6 +52,7 @@ function Footer() {
         <a
           href="https://github.com/Tratatemium"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="GitHub profile"
         >
           <svg
@@ -65,6 +68,7 @@ function Footer() {
         <a
           href="https://www.instagram.com/visitanoinvitado/"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="Instagram profile"
         >
           <svg
@@ -80,6 +84,7 @@ function Footer() {
         <a
           href="https://t.me/tratatemium"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="Telegram profile"
         >
           <svg
@@ -95,6 +100,7 @@ function Footer() {
         <a
           href="https://wa.me/46769762974"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="WhatsApp profile"
         >
           <svg

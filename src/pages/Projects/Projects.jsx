@@ -9,10 +9,33 @@ function Projects({ openLightbox }) {
   const [ref1, isInview1, isScrollingUp1] = useInView({ threshold: 0.2 });
   const [ref2, isInview2, isScrollingUp2] = useInView({ threshold: 0.2 });
   const [ref3, isInview3, isScrollingUp3] = useInView({ threshold: 0.2 });
+  const [ref4, isInview4, isScrollingUp4] = useInView({ threshold: 0.2 });
   return (
     <>
       <h1 className={styles.title}>&lt;My projects&gt;</h1>
       <div className={section.content}>
+        <section
+          ref={ref4}
+          className={`${section.section} ${isInview4 ? section.show : isScrollingUp4 ? section.hideUp : section.hideDown}`}
+        >
+          <h2 className={styles.title}># Personal Portfolio Web App</h2>
+          <p className={styles.description}>
+            A modern, responsive web app built with React, React Router DOM, and
+            CSS Modules, hosting my portfolio, skills, and hobbies. It features
+            multi-page navigation (Home, About, Projects, Hobbies), dark/light
+            mode, smooth scroll animations, interactive image lightboxes, and
+            accessibility-focused design, delivering an engaging and
+            user-friendly experience across devices.
+          </p>
+          <div className={styles.links}>
+            <ArrowLink
+              href="https://github.com/Tratatemium/Tratatemium.github.io"
+              text="GitHub page"
+              svgType="GitHub"
+            />
+          </div>
+        </section>
+
         <section
           ref={ref1}
           className={`${section.section} ${isInview1 ? section.show : isScrollingUp1 ? section.hideUp : section.hideDown}`}
@@ -37,7 +60,7 @@ function Projects({ openLightbox }) {
             Island.
           </p>
           <Gallery images={galleries.my2048game} openLightbox={openLightbox} />
-          <div class={styles.links}>
+          <div className={styles.links}>
             <ArrowLink
               href="https://tratatemium.github.io/2048-game/"
               text="2048 game"
@@ -71,7 +94,7 @@ function Projects({ openLightbox }) {
             highlights, and a chat interface.
           </p>
           <Gallery images={galleries.happyPaws} openLightbox={openLightbox} />
-          <div class={styles.links}>
+          <div className={styles.links}>
             <ArrowLink
               href="https://tratatemium.github.io/HappyPaws/"
               text="Happy paws"
@@ -101,7 +124,7 @@ function Projects({ openLightbox }) {
             event handling, card shuffling algorithms, and CSS animations.
           </p>
           <Gallery images={galleries.memoryGame} openLightbox={openLightbox} />
-          <div class={styles.links}>
+          <div className={styles.links}>
             <ArrowLink
               href="https://tratatemium.github.io/Memory-game/"
               text="Memory game"
