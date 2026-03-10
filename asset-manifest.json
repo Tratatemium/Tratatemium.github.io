@@ -1,13 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.0f0c7cf8.css",
-    "main.js": "/static/js/main.030acbbb.js",
+    "main.css": "/static/css/main.d5bf63b9.css",
+    "main.js": "/static/js/main.983ded26.js",
     "static/js/453.1eb0bf63.chunk.js": "/static/js/453.1eb0bf63.chunk.js",
+    "static/media/Memory-Game-01.png": "/static/media/Memory-Game-01.7f21ebeff108b21d8ad5.png",
+    "static/media/Memory-Game-03.png": "/static/media/Memory-Game-03.fcfcf9f7f9c33ac9c6c7.png",
+    "static/media/Memory-Game-02.png": "/static/media/Memory-Game-02.4034c4e34e97c3041b08.png",
+    "static/media/Happy-Paws-02.png": "/static/media/Happy-Paws-02.419d07fe46be5d1c8d86.png",
     "static/media/Brioche.png": "/static/media/Brioche.259d2154c3c0c34d0aea.png",
-    "static/media/Fried rice.png": "/static/media/Fried rice.47fafa9f23103eb2dfa7.png",
+    "static/media/Fried-rice.png": "/static/media/Fried-rice.47fafa9f23103eb2dfa7.png",
+    "static/media/Memory-Game-04.png": "/static/media/Memory-Game-04.a9aa1a245945d4df724b.png",
     "static/media/Sourdough.png": "/static/media/Sourdough.94e99574d3ef227509f2.png",
+    "static/media/Happy-Paws-03.png": "/static/media/Happy-Paws-03.38a56049e8d0c79c7751.png",
     "static/media/Ramen.png": "/static/media/Ramen.74cf197820eb140a8700.png",
+    "static/media/Happy-Paws-01.png": "/static/media/Happy-Paws-01.eb3b4ed2dae8b9ff7fa9.png",
+    "static/media/2048-01.png": "/static/media/2048-01.9e6c2b9905d273ffbb1e.png",
+    "static/media/2048-03.png": "/static/media/2048-03.53dc5449e75ea38830c3.png",
+    "static/media/2048-02.png": "/static/media/2048-02.161aa4798f5ee51d5b3c.png",
+    "static/media/2048-04.png": "/static/media/2048-04.b2a341a6f0e95f5c31a4.png",
     "static/media/background-night.png": "/static/media/background-night.8254cbf80f74b7b8b8b3.png",
+    "static/media/Happy-Paws-04.png": "/static/media/Happy-Paws-04.c9e06eb59c1fcfb783a2.png",
     "static/media/my-photo.png": "/static/media/my-photo.9df4201b9339fc7bb171.png",
     "static/media/background.png": "/static/media/background.938902ef84e4638cb134.png",
     "static/media/Table-restoration-3.jpg": "/static/media/Table-restoration-3.4a45da66a300b1017bb5.jpg",
@@ -24,12 +36,12 @@
     "static/media/Desk-organaiser-6.jpg": "/static/media/Desk-organaiser-6.279659414428080ebae7.jpg",
     "static/media/Desk-organaiser-5.jpg": "/static/media/Desk-organaiser-5.efb075753437b6a8c0dd.jpg",
     "index.html": "/index.html",
-    "main.0f0c7cf8.css.map": "/static/css/main.0f0c7cf8.css.map",
-    "main.030acbbb.js.map": "/static/js/main.030acbbb.js.map",
+    "main.d5bf63b9.css.map": "/static/css/main.d5bf63b9.css.map",
+    "main.983ded26.js.map": "/static/js/main.983ded26.js.map",
     "453.1eb0bf63.chunk.js.map": "/static/js/453.1eb0bf63.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f0c7cf8.css",
-    "static/js/main.030acbbb.js"
+    "static/css/main.d5bf63b9.css",
+    "static/js/main.983ded26.js"
   ]
 }
