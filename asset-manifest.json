@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d5bf63b9.css",
-    "main.js": "/static/js/main.983ded26.js",
+    "main.js": "/static/js/main.3be7c22f.js",
     "static/js/453.1eb0bf63.chunk.js": "/static/js/453.1eb0bf63.chunk.js",
     "static/media/Memory-Game-01.png": "/static/media/Memory-Game-01.7f21ebeff108b21d8ad5.png",
     "static/media/Memory-Game-03.png": "/static/media/Memory-Game-03.fcfcf9f7f9c33ac9c6c7.png",
@@ -37,11 +37,11 @@
     "static/media/Desk-organaiser-5.jpg": "/static/media/Desk-organaiser-5.efb075753437b6a8c0dd.jpg",
     "index.html": "/index.html",
     "main.d5bf63b9.css.map": "/static/css/main.d5bf63b9.css.map",
-    "main.983ded26.js.map": "/static/js/main.983ded26.js.map",
+    "main.3be7c22f.js.map": "/static/js/main.3be7c22f.js.map",
     "453.1eb0bf63.chunk.js.map": "/static/js/453.1eb0bf63.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d5bf63b9.css",
-    "static/js/main.983ded26.js"
+    "static/js/main.3be7c22f.js"
   ]
 }
