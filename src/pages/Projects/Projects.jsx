@@ -6,16 +6,16 @@ import { galleries } from "./Projects.data.js";
 import useInView from "../../hooks/useInView";
 
 function Projects({ openLightbox }) {
-  const [ref1, isInview1] = useInView({ threshold: 0.2 });
-  const [ref2, isInview2] = useInView({ threshold: 0.2 });
-  const [ref3, isInview3] = useInView({ threshold: 0.2 });
+  const [ref1, isInview1, isScrollingUp1] = useInView({ threshold: 0.2 });
+  const [ref2, isInview2, isScrollingUp2] = useInView({ threshold: 0.2 });
+  const [ref3, isInview3, isScrollingUp3] = useInView({ threshold: 0.2 });
   return (
     <>
       <h1 className={styles.title}>&lt;My projects&gt;</h1>
       <div className={section.content}>
         <section
           ref={ref1}
-          className={`${section.section} ${isInview1 ? section.show : ""}`}
+          className={`${section.section} ${isInview1 ? section.show : isScrollingUp1 ? section.hideUp : section.hideDown}`}
         >
           <h2 className={styles.title}># 2048 Web Game</h2>
           <p className={styles.description}>
@@ -53,7 +53,7 @@ function Projects({ openLightbox }) {
 
         <section
           ref={ref2}
-          className={`${section.section} ${isInview2 ? section.show : ""}`}
+          className={`${section.section} ${isInview2 ? section.show : isScrollingUp2 ? section.hideUp : section.hideDown}`}
         >
           <h2 className={styles.title}>
             # HappyPaws — Collaborative Frontend Project
@@ -87,7 +87,7 @@ function Projects({ openLightbox }) {
 
         <section
           ref={ref3}
-          className={`${section.section} ${isInview3 ? section.show : ""}`}
+          className={`${section.section} ${isInview3 ? section.show : isScrollingUp3 ? section.hideUp : section.hideDown}`}
         >
           <h2 className={styles.title}># Memory Card Game</h2>
           <p className={styles.description}>

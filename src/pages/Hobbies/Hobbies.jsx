@@ -5,10 +5,10 @@ import { galleries } from "./Hobbies.data.js";
 import useInView from "../../hooks/useInView";
 
 function Hobbies({ openLightbox }) {
-  const [ref1, isInview1] = useInView({ threshold: 0.2 });
-  const [ref2, isInview2] = useInView({ threshold: 0.2 });
-  const [ref3, isInview3] = useInView({ threshold: 0.2 });
-  const [ref4, isInview4] = useInView({ threshold: 0.2 });
+  const [ref1, isInview1, isScrollingUp1] = useInView({ threshold: 0.2 });
+  const [ref2, isInview2, isScrollingUp2] = useInView({ threshold: 0.2 });
+  const [ref3, isInview3, isScrollingUp3] = useInView({ threshold: 0.2 });
+  const [ref4, isInview4, isScrollingUp4] = useInView({ threshold: 0.2 });
 
   return (
     <>
@@ -17,7 +17,7 @@ function Hobbies({ openLightbox }) {
       <div className={section.content}>
         <section
           ref={ref1}
-          className={`${section.section} ${isInview1 ? section.show : ""}`}
+          className={`${section.section} ${isInview1 ? section.show : isScrollingUp1 ? section.hideUp : section.hideDown}`}
         >
           <h2 className={styles.title}># Cooking</h2>
           <p>
@@ -32,7 +32,7 @@ function Hobbies({ openLightbox }) {
 
         <section
           ref={ref2}
-          className={`${section.section} ${isInview2 ? section.show : ""}`}
+          className={`${section.section} ${isInview2 ? section.show : isScrollingUp2 ? section.hideUp : section.hideDown}`}
         >
           <h2 className={styles.title}># Woodworking</h2>
           <p>
@@ -47,7 +47,7 @@ function Hobbies({ openLightbox }) {
 
         <section
           ref={ref3}
-          className={`${section.section} ${isInview3 ? section.show : ""}`}
+          className={`${section.section} ${isInview3 ? section.show : isScrollingUp3 ? section.hideUp : section.hideDown}`}
         >
           <p>
             This late 19th-century table belonged to my great-grandmother and
@@ -73,7 +73,7 @@ function Hobbies({ openLightbox }) {
 
         <section
           ref={ref4}
-          className={`${section.section} ${isInview4 ? section.show : ""}`}
+          className={`${section.section} ${isInview4 ? section.show : isScrollingUp4 ? section.hideUp : section.hideDown}`}
         >
           <p>
             My partner is into drawing and scrapbooking, so naturally she has a
