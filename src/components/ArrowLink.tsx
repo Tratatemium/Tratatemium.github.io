@@ -1,6 +1,6 @@
 import styles from "./ArrowLink.module.css";
 
-import { SvgLogo, SvgType } from "./SvgLogo";
+import { SvgLogo, SvgType } from "./SvgLogo.tsx";
 
 interface ArrowLinkProps {
   href: string;

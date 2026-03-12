@@ -1,8 +1,8 @@
 import styles from "./Projects.module.css";
-import Gallery from "../../components/Gallery";
-import ArrowLink from "../../components/ArrowLink";
+import Gallery from "../../components/Gallery.tsx";
+import ArrowLink from "../../components/ArrowLink.tsx";
 import section from "../SectionLayout.module.css";
-import { galleries } from "./Projects.data.js";
+import { galleries } from "./Projects.data.ts";
 import useInView from "../../hooks/useInView";
 
 function Projects({ openLightbox }) {
