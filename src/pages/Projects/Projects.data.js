@@ -11,7 +11,7 @@ import {
   HappyPaws2,
   HappyPaws3,
   HappyPaws4
-} from "../../assets";
+} from "../../assets/index.ts";
 
 export const galleries = {
   my2048game: [

@@ -16,7 +16,7 @@ import {
   DeskOrganiser5,
   DeskOrganiser6,
   DeskOrganiser7,
-} from "../../assets";
+} from "../../assets/index.ts";
 
 export const galleries = {
   cooking: [
