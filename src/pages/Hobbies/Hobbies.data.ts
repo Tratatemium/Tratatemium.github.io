@@ -1,3 +1,5 @@
+import type { Image } from "../../components/Gallery.tsx";
+
 import {
   Sourdough,
   Brioche,
@@ -18,7 +20,7 @@ import {
   DeskOrganiser7,
 } from "../../assets/index.ts";
 
-export const galleries = {
+export const galleries: Record<string, Image[]> = {
   cooking: [
     {
       src: Sourdough,

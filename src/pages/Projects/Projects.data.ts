@@ -1,3 +1,5 @@
+import type { Image } from "../../components/Gallery.tsx";
+
 import {
   My2048game1,
   My2048game2,
@@ -13,7 +15,7 @@ import {
   HappyPaws4
 } from "../../assets/index.ts";
 
-export const galleries = {
+export const galleries: Record<string, Image[]> = {
   my2048game: [
     {
       src: My2048game1,
