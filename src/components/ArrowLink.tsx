@@ -1,8 +1,14 @@
 import styles from "./ArrowLink.module.css";
 
-import SvgLogo from "./SvgLogo";
+import { SvgLogo, SvgType } from "./SvgLogo.tsx";
 
-function ArrowLink({ href, text, svgType }) {
+interface ArrowLinkProps {
+  href: string;
+  text: string;
+  svgType: SvgType;
+}
+
+function ArrowLink({ href, text, svgType }: ArrowLinkProps) {
   return (
     <a
       href={href}

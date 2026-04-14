@@ -12,7 +12,7 @@ import Hobbies from "./pages/Hobbies/Hobbies";
 import SkipLink from "./components/SkipLink.jsx";
 import ThemeToggle from "./components/ThemeToggle.jsx";
 import Navbar from "./components/Navbar.tsx";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.tsx";
 import MyPhoto from "./components/MyPhoto.tsx";
 import Lightbox from "./components/Lightbox/Lightbox";
 import { useLightbox } from "./components/Lightbox/useLightbox";

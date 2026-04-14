@@ -1,6 +1,17 @@
 import styles from "./Gallery.module.css";
 
-function Gallery({ images, openLightbox }) {
+export interface Image {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+interface GalleryProps {
+  images: Image[];
+  openLightbox: (images: any, index: any) => {};
+}
+
+function Gallery({ images, openLightbox }: GalleryProps) {
   return (
     <div className={styles.gallery}>
       {images.map((img, index) => (
