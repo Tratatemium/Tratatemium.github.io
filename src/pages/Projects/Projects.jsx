@@ -10,10 +10,51 @@ function Projects({ openLightbox }) {
   const [ref2, isInview2, isScrollingUp2] = useInView({ threshold: 0.2 });
   const [ref3, isInview3, isScrollingUp3] = useInView({ threshold: 0.2 });
   const [ref4, isInview4, isScrollingUp4] = useInView({ threshold: 0.2 });
+  const [ref5, isInview5, isScrollingUp5] = useInView({ threshold: 0.2 });
   return (
     <>
       <h1 className={styles.title}>&lt;My projects&gt;</h1>
       <div className={section.content}>
+        <section
+          ref={ref5}
+          className={`${section.section} ${isInview5 ? section.show : isScrollingUp5 ? section.hideUp : section.hideDown}`}
+        >
+          <h2 className={styles.title}># Runera — Fullstack Running Tracker</h2>
+          <p className={styles.description}>
+            Runera is a fullstack web application for tracking and analyzing
+            running activities through a clean, intuitive interface. It features
+            a complete authentication flow with protected routes and a
+            personalized user dashboard.
+            <br />
+            <br />
+            The app provides full CRUD functionality for runs, with features
+            such as pace preview, weather tags, effort levels, and notes for
+            deeper insights. Users can also manage their profile data, including
+            metrics like date of birth, height, and weight.
+            <br />
+            <br />
+            Built with React and TypeScript on the frontend, and Node.js,
+            Express, and MongoDB on the backend. Fully deployed on Vercel.
+          </p>
+          <div className={styles.links}>
+            <ArrowLink
+              href="https://runera.vercel.app/"
+              text="Live Demo"
+              svgType="Globe"
+            />
+            <ArrowLink
+              href="https://github.com/Tratatemium/Runera"
+              text="Frontend Code"
+              svgType="GitHub"
+            />
+            <ArrowLink
+              href="https://github.com/Tratatemium/Runera-API"
+              text="Backend Code"
+              svgType="GitHub"
+            />
+          </div>
+        </section>
+
         <section
           ref={ref4}
           className={`${section.section} ${isInview4 ? section.show : isScrollingUp4 ? section.hideUp : section.hideDown}`}

@@ -8,6 +8,14 @@
   font-weight: bold;
 }
 
+.linksGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
 .links {
   display: flex;
   justify-content: center;
@@ -15,6 +23,12 @@
   margin-top: -1em;
   font-size: 1.2em;
 }
+
+.linksGroup .links {
+  margin-top: 0;
+}
+
+
 
 .projectSeparator {
   color: var(--accent-color-2);
