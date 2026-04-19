@@ -1,18 +1,34 @@
 import styles from "./Projects.module.css";
-import Gallery from "../../components/Gallery.tsx";
-import ArrowLink from "../../components/ArrowLink.tsx";
 import section from "../SectionLayout.module.css";
-import { galleries } from "./Projects.data.ts";
+
 import useInView from "../../hooks/useInView";
 
+import Gallery from "../../components/Gallery.tsx";
+import ArrowLink from "../../components/ArrowLink.tsx";
+
+import { galleries } from "./Projects.data.ts";
+import { client } from "../../sanity/client.ts";
+import { useEffect, useState } from "react";
+
 function Projects({ openLightbox }) {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    client.fetch(`*[_type == "post"]{title, slug}`).then(setProjects);
+  }, []);
+
   const [ref1, isInview1, isScrollingUp1] = useInView({ threshold: 0.2 });
   const [ref2, isInview2, isScrollingUp2] = useInView({ threshold: 0.2 });
   const [ref3, isInview3, isScrollingUp3] = useInView({ threshold: 0.2 });
   const [ref4, isInview4, isScrollingUp4] = useInView({ threshold: 0.2 });
   const [ref5, isInview5, isScrollingUp5] = useInView({ threshold: 0.2 });
+
   return (
     <>
+      <div>
+        {projects.map((project) => (
+          <h2 key={project.slug.current}>{project.title}</h2>
+        ))}
+      </div>
       <h1 className={styles.title}>&lt;My projects&gt;</h1>
       <div className={section.content}>
         <section
